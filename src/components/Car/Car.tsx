@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { a } from '@react-spring/three';
-import Model from '../Model/ModelDraco1';
+import Model from '../Model/ModelDraco';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import CATEGORIESMAP from '../utils/utils';
@@ -36,7 +36,7 @@ export default function Car({
         state.camera.position.lerp(vek.set(0.8, 0.1, 0), 0.05);
         break;
       case CATEGORIESMAP.none.name:
-        state.camera.position.lerp(vek.set(0.3, 0.9, 3.6), 0.05);
+        state.camera.position.lerp(vek.set(180, 20, 140), 0.05);
         break;
       default:
         break;
