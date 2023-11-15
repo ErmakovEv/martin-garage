@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from '@react-three/fiber';
 import Car from '../Car/Car';
-import { MeshReflectorMaterial, Stage, OrbitControls } from '@react-three/drei';
+import { MeshReflectorMaterial, OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
 import CATEGORIESMAP from '../utils/utils';
