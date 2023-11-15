@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { a } from '@react-spring/three';
-import Model from '../Model/Model.jsx';
+import Model from '../Model/ModelDraco1';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import CATEGORIESMAP from '../utils/utils';
