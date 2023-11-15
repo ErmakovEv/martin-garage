@@ -15,11 +15,11 @@ const MainPage = ({ bottonActive }: MainPageProps) => {
     <Suspense fallback={<Loader />}>
       <div className="main-page">
         <Canvas>
-          <color attach="background" args={['#000']} />
+          <color attach="background" args={['#fff']} />
           {/* <fog attach="fog" args={['#213547', 10, 20]} /> */}
           {/* <Stage environment="city" intensity={0.1} castShadow={false}> */}
-          <ambientLight intensity={10} />
-          <directionalLight position={[10, 20, 0]} intensity={15} />
+          <ambientLight intensity={1} />
+          <directionalLight position={[10, 20, 15]} intensity={17} />
           <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
           {/* </Stage> */}
           {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-2}>
