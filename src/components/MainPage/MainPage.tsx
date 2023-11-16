@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from '@react-three/fiber';
 import Car from '../Car/Car';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stage } from '@react-three/drei';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
 import CATEGORIESMAP from '../utils/utils';
@@ -17,11 +17,9 @@ const MainPage = ({ bottonActive }: MainPageProps) => {
         <Canvas>
           <color attach="background" args={['#fff']} />
           {/* <fog attach="fog" args={['#213547', 10, 20]} /> */}
-          {/* <Stage environment="city" intensity={0.1} castShadow={false}> */}
-          <ambientLight intensity={1} />
-          <directionalLight position={[10, 20, 15]} intensity={17} />
-          <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
-          {/* </Stage> */}
+          <Stage environment="city" intensity={0.1} castShadow={false}>
+            <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
+          </Stage>
           {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-2}>
             <planeGeometry args={[170, 170]} />
             <MeshReflectorMaterial

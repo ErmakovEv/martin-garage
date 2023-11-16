@@ -1,11 +1,11 @@
 Model Information:
-* title:	Aston Martin V8 Vantage V600 LimitedEdition 1998
-* source:	https://sketchfab.com/3d-models/aston-martin-v8-vantage-v600-limitededition-1998-4f2d9b51a0d44ea186d8354246379941
-* author:	ᗩᒪE᙭. Kᗩ.🚗 (https://sketchfab.com/Alex.Ka.)
+* title:	2011 Aston Martin One-77
+* source:	https://sketchfab.com/3d-models/2011-aston-martin-one-77-57d0b9062aab4e079fbb8d06bf39baf4
+* author:	_Sheep19 (https://sketchfab.com/s0h1o9b)
 
 Model License:
-* license type:	CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
-* requirements:	Author must be credited. No commercial use. Modified versions can not be distributed.
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Aston Martin V8 Vantage V600 LimitedEdition 1998" (https://sketchfab.com/3d-models/aston-martin-v8-vantage-v600-limitededition-1998-4f2d9b51a0d44ea186d8354246379941) by ᗩᒪE᙭. Kᗩ.🚗 (https://sketchfab.com/Alex.Ka.) licensed under CC-BY-NC-ND-4.0 (http://creativecommons.org/licenses/by-nc-nd/4.0/)
+This work is based on "2011 Aston Martin One-77" (https://sketchfab.com/3d-models/2011-aston-martin-one-77-57d0b9062aab4e079fbb8d06bf39baf4) by _Sheep19 (https://sketchfab.com/s0h1o9b) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

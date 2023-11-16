@@ -1,7 +1,7 @@
 .card {
   --background: #fff;
   --background-checkbox: #0082ff;
-  --background-image: #fff, rgba(0, 107, 175, 0.2);
+  --background-image: #fff, #006baf33;
   --text-color: #666;
   --text-headline: #000;
   --card-shadow: #0082ff;
