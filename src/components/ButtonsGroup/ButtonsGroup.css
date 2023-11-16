@@ -1,6 +1,6 @@
 .buttons-group {
   width: 100%;
-  background-color: rgb(17, 18, 23);
+  background-color: #0b180c;
 }
 
 .buttons-list {
@@ -10,7 +10,6 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  /* max-width: 140px; */
 }
 
 .buttons-list label {

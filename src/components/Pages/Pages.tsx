@@ -1,6 +1,7 @@
 import { useState, createContext } from 'react';
 import MainPage from '../MainPage/MainPage';
-import ButtonsGroup from '../ButtonsGroup/ButtonsGroup';
+// import ButtonsGroup from '../ButtonsGroup/ButtonsGroup';
+import EngineComponent from '../CustomButtonGroups/CustomButtonGroups';
 import CustomDialog from '../CustomDialog/CustomDialog';
 import CATEGORIESMAP from '../utils/utils';
 import './Pages.css';
@@ -31,9 +32,9 @@ function Pages() {
     }
   };
 
-  const handleOpen = (cat: keyof typeof CATEGORIESMAP) => {
-    setBottonActive(cat);
-  };
+  // const handleOpen = (cat: keyof typeof CATEGORIESMAP) => {
+  //   setBottonActive(cat);
+  // };
 
   const handleClose = () => {
     setBottonActive(CATEGORIESMAP.none.name);
@@ -46,11 +47,11 @@ function Pages() {
       <div className="container">
         <section>
           <MainPage bottonActive={bottonActive} />
-          <ButtonsGroup handleClick={handleOpen} bottonActive={bottonActive} />
+          {/* <ButtonsGroup handleClick={handleOpen} bottonActive={bottonActive} /> */}
           <CustomDialog bottonActive={bottonActive} handleClose={handleClose} />
         </section>
         <section>
-          <h2>Page2</h2>
+          <EngineComponent />
         </section>
       </div>
     </MyContext.Provider>

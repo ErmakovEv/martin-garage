@@ -36,7 +36,7 @@ export default function Car({
         state.camera.position.lerp(vek.set(0.8, 0.1, 0), 0.05);
         break;
       case CATEGORIESMAP.none.name:
-        state.camera.position.lerp(vek.set(3, 1, 5), 0.05);
+        state.camera.position.lerp(vek.set(-4, 1, 3.2), 0.05);
         break;
       default:
         break;

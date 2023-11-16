@@ -15,27 +15,10 @@ const MainPage = ({ bottonActive }: MainPageProps) => {
     <Suspense fallback={<Loader />}>
       <div className="main-page">
         <Canvas>
-          <color attach="background" args={['#fff']} />
-          {/* <fog attach="fog" args={['#213547', 10, 20]} /> */}
+          <color attach="background" args={['#0b180c']} />
           <Stage environment="city" intensity={0.1} castShadow={false}>
             <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
           </Stage>
-          {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-2}>
-            <planeGeometry args={[170, 170]} />
-            <MeshReflectorMaterial
-              blur={[300, 100]}
-              resolution={2048}
-              mixBlur={1}
-              mixStrength={40}
-              roughness={1}
-              depthScale={1.2}
-              minDepthThreshold={0.4}
-              maxDepthThreshold={1.4}
-              color="#101010"
-              metalness={0.5}
-              mirror={0}
-            />
-          </mesh> */}
           <OrbitControls
             enableZoom={true}
             enablePan={true}
