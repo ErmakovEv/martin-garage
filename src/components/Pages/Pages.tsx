@@ -3,6 +3,8 @@ import MainPage from '../MainPage/MainPage';
 // import ButtonsGroup from '../ButtonsGroup/ButtonsGroup';
 import EngineComponent from '../CustomButtonGroups/CustomButtonGroups';
 import CustomDialog from '../CustomDialog/CustomDialog';
+import Header from '../Header/Header';
+import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
 import CATEGORIESMAP from '../utils/utils';
 import './Pages.css';
 
@@ -19,6 +21,12 @@ function Pages() {
   const [bottonActive, setBottonActive] = useState<keyof typeof CATEGORIESMAP>(
     CATEGORIESMAP.none.name
   );
+
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+
+  const toggleDrawer = (newOpen: boolean) => {
+    setOpenDrawer(newOpen);
+  };
 
   const handlerChangeList = (checkboxValue: string) => {
     if (workList.has(checkboxValue)) {
@@ -46,9 +54,11 @@ function Pages() {
     <MyContext.Provider value={{ cb: handlerChangeList, list: workList }}>
       <div className="container">
         <section>
+          <Header handlerOpenDrawer={toggleDrawer} />
           <MainPage bottonActive={bottonActive} />
           {/* <ButtonsGroup handleClick={handleOpen} bottonActive={bottonActive} /> */}
           <CustomDialog bottonActive={bottonActive} handleClose={handleClose} />
+          <SwipeableEdgeDrawer isOpen={openDrawer} handlerOpen={toggleDrawer} />
         </section>
         <section>
           <EngineComponent />

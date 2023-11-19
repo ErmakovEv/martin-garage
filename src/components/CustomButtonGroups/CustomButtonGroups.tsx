@@ -40,9 +40,6 @@ const EngineComponent: React.FC = () => {
                       <br />
                     </span>
                     <span>
-                      {/* Start */}
-                      {/* <br /> */}
-                      {/* Stop */}
                       <br />
                       {CATEGORIESMAP.engine.img && (
                         <CATEGORIESMAP.engine.img
