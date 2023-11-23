@@ -5,10 +5,10 @@
   --text-color: #666;
   --text-headline: #000;
   --card-shadow: #0082ff;
-  --card-height: 190px;
-  --card-width: 190px;
+  /* --card-height: ; */
+  --card-width: 15vmax;
   --card-radius: 12px;
-  --header-height: 60px;
+  --header-height: 5vmax;
   --blend-mode: overlay;
   --transition: 0.15s;
   user-select: none;
@@ -170,11 +170,12 @@
 .card__body-header-title {
   color: var(--text-headline);
   font-weight: 700;
+  font-size: 1vh;
   margin-bottom: 1px;
 }
 
 .card__body-header-subtitle {
   color: var(--text-color);
   font-weight: 500;
-  font-size: 13px;
+  font-size: 0.7vh;
 }

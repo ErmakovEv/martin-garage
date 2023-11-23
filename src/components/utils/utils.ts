@@ -17,7 +17,7 @@ export const CATEGORIES = {
   none: 'none' as const,
 };
 
-interface ICategoryObj {
+export interface ICategoryObj {
   name: keyof typeof CATEGORIES;
   title?: string;
   img?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -59,6 +59,9 @@ const CATEGORIESMAP: CategoriesMap = {
       'Ремонт рулевой рейки',
       'Замена мортизаторов',
       'Замена рулевых наконечников',
+      'Замена стоек стабилизатора',
+      'Замена стоек стабилизатора',
+      'Замена стоек стабилизатора',
       'Замена стоек стабилизатора',
     ],
     service: ['Диагностика подвески', 'Диагностика рулевого управления'],

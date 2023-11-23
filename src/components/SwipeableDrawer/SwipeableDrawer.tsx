@@ -1,19 +1,19 @@
-// import * as React from 'react';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { grey } from '@mui/material/colors';
-// import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import Skeleton from '@mui/material/Skeleton';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import CustomButtonsGroup from '../CustomButtonsGroup/CustomButtonsGroup';
+import CATEGORIESMAP from '../utils/utils';
 
 const drawerBleeding = 36;
 
 interface SwipeableEdgeDrawerProps {
   isOpen: boolean;
   handlerOpen: (open: boolean) => void;
+  bottonActive: keyof typeof CATEGORIESMAP;
 }
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -27,7 +27,7 @@ const Puller = styled(Box)(({ theme }) => ({
   borderRadius: 3,
   position: 'absolute',
   top: 5,
-  left: 'calc(25% - 15px)',
+  left: 'calc(50% - 15px)',
 }));
 
 export default function SwipeableEdgeDrawer({
@@ -40,7 +40,7 @@ export default function SwipeableEdgeDrawer({
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(20% - ${drawerBleeding}px)`,
+            height: `calc(22% - ${drawerBleeding}px)`,
             overflow: 'visible',
           },
         }}
@@ -68,19 +68,29 @@ export default function SwipeableEdgeDrawer({
           }}
         >
           <Puller />
-          <Typography sx={{ p: 2, color: 'text.secondary' }}>
+          <Typography
+            sx={{
+              p: 1,
+              color: 'white',
+              backgroundColor: '#1b1b1b',
+            }}
+          >
             51 results
           </Typography>
         </StyledBox>
+
         <StyledBox
           sx={{
             px: 2,
             pb: 2,
             height: '100%',
             overflow: 'auto',
+            backgroundColor: '#1b1b1b',
           }}
         >
-          <Skeleton variant="rectangular" height="100%" />
+          <Box component="div" sx={{ height: '100%' }}>
+            <CustomButtonsGroup />
+          </Box>
         </StyledBox>
       </SwipeableDrawer>
     </>

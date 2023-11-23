@@ -1,8 +1,9 @@
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import React from 'react';
+import 'react-multi-carousel/lib/styles.css';
+import './CustomTabs.css';
 import { MyContext } from '../Pages/Pages';
 import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
 import CATEGORIESMAP from '../utils/utils';
@@ -23,10 +24,25 @@ function CustomTabPanel(props: TabPanelProps) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+      style={{}}
+      className="drawer-container"
     >
       {value === index && (
-        <Box component={'div'} sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Box
+          component={'div'}
+          sx={{
+            p: 1,
+            display: 'flex',
+            alignItems: 'start',
+            width: '100%',
+            // height: '20vh',
+            // justifyContent: 'space-around',
+
+            // backgroundColor: 'red',
+          }}
+          className={'drawer-section'}
+        >
+          {children}
         </Box>
       )}
     </div>
@@ -48,36 +64,34 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
   const [value, setValue] = React.useState(0);
   const context = React.useContext(MyContext);
 
-  // const [workList, setWorkList] = React.useState<Set<string>>(
-  //   () => new Set<string>()
-  // );
-
-  const handleChange = (newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   return (
-    <Box
-      component={'div'}
-      sx={{ width: '100%', height: '250px', overfloyY: 'auto' }}
-    >
-      <Box component={'div'} sx={{ borderBottom: 1, borderColor: 'divider' }}>
+    <Box component={'div'} sx={{ width: '100%' }}>
+      <Box
+        component={'div'}
+        sx={{
+          borderBottom: 1,
+          borderColor: 'divider',
+          width: '100%',
+          display: 'flex',
+          color: 'white',
+        }}
+      >
         <Tabs
           value={value}
-          onChange={() => handleChange}
+          onChange={handleChange}
           aria-label="basic tabs example"
         >
-          <Tab label="Ремонт" {...a11yProps(0)} />
-          <Tab label="ТО" {...a11yProps(1)} />
+          <Tab label="Ремонт" {...a11yProps(0)} sx={{ color: 'white' }} />
+          <Tab label="ТО" {...a11yProps(1)} sx={{ color: 'white' }} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        {CATEGORIESMAP[bottonActive].repair?.map((item, index) => (
-          <Box
-            component={'div'}
-            sx={{ display: 'flex', justifyContent: 'center', mb: '40px' }}
-            key={index}
-          >
+        {CATEGORIESMAP[bottonActive].repair?.map((item) => (
+          <Box component="div" style={{ margin: 4 }}>
             <CustomCheckbox
               key={item}
               value={item}
@@ -88,12 +102,8 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
         ))}
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        {CATEGORIESMAP[bottonActive].service?.map((item, index) => (
-          <Box
-            component={'div'}
-            sx={{ display: 'flex', justifyContent: 'center', mb: '40px' }}
-            key={index}
-          >
+        {CATEGORIESMAP[bottonActive].service?.map((item) => (
+          <Box component="div" style={{ margin: 4 }}>
             <CustomCheckbox
               key={item}
               value={item}

@@ -1,11 +1,10 @@
 import { useState, createContext } from 'react';
 import MainPage from '../MainPage/MainPage';
-// import ButtonsGroup from '../ButtonsGroup/ButtonsGroup';
-import EngineComponent from '../CustomButtonGroups/CustomButtonGroups';
 import CustomDialog from '../CustomDialog/CustomDialog';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
 import CATEGORIESMAP from '../utils/utils';
+
 import './Pages.css';
 
 type IMyContext = {
@@ -40,15 +39,9 @@ function Pages() {
     }
   };
 
-  // const handleOpen = (cat: keyof typeof CATEGORIESMAP) => {
-  //   setBottonActive(cat);
-  // };
-
   const handleClose = () => {
     setBottonActive(CATEGORIESMAP.none.name);
   };
-
-  console.log(workList);
 
   return (
     <MyContext.Provider value={{ cb: handlerChangeList, list: workList }}>
@@ -56,13 +49,14 @@ function Pages() {
         <section>
           <Header handlerOpenDrawer={toggleDrawer} />
           <MainPage bottonActive={bottonActive} />
-          {/* <ButtonsGroup handleClick={handleOpen} bottonActive={bottonActive} /> */}
           <CustomDialog bottonActive={bottonActive} handleClose={handleClose} />
-          <SwipeableEdgeDrawer isOpen={openDrawer} handlerOpen={toggleDrawer} />
+          <SwipeableEdgeDrawer
+            isOpen={openDrawer}
+            handlerOpen={toggleDrawer}
+            bottonActive={bottonActive}
+          />
         </section>
-        <section>
-          <EngineComponent />
-        </section>
+        <section>123</section>
       </div>
     </MyContext.Provider>
   );
