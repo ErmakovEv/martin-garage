@@ -2,7 +2,6 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import React from 'react';
-import 'react-multi-carousel/lib/styles.css';
 import './CustomTabs.css';
 import { MyContext } from '../Pages/Pages';
 import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
