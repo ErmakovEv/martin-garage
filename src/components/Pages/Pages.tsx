@@ -1,8 +1,9 @@
-import { useState, createContext } from 'react';
+import { useState, createContext, useRef } from 'react';
 import MainPage from '../MainPage/MainPage';
 import CustomDialog from '../CustomDialog/CustomDialog';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
+import SecondPage from './SecondPage';
 import CATEGORIESMAP from '../utils/utils';
 
 import './Pages.css';
@@ -43,11 +44,20 @@ function Pages() {
     setBottonActive(CATEGORIESMAP.none.name);
   };
 
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  const handleClickFirstPage = () => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <MyContext.Provider value={{ cb: handlerChangeList, list: workList }}>
       <div className="container">
         <section>
-          <Header handlerOpenDrawer={toggleDrawer} />
+          <Header
+            handlerOpenDrawer={toggleDrawer}
+            handleClickFirstPage={handleClickFirstPage}
+          />
           <MainPage bottonActive={bottonActive} />
           <CustomDialog bottonActive={bottonActive} handleClose={handleClose} />
           <SwipeableEdgeDrawer
@@ -56,7 +66,7 @@ function Pages() {
             bottonActive={bottonActive}
           />
         </section>
-        <section>123</section>
+        <SecondPage ref={ref} />
       </div>
     </MyContext.Provider>
   );
