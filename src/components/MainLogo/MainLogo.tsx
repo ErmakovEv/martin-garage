@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import logo from '../../../public/logo.png';
+import logo from '/logo.png';
 import './MainLogo.css';
 
 function MainLogo() {

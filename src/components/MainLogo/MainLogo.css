@@ -1,6 +1,6 @@
 .logo-container {
   /* position: absolute; */
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 .logo {
@@ -11,7 +11,7 @@
   color: #fff;
   /* padding: 10px 20px; */
   border-radius: 5px;
-  scale: 1.3;
+  scale: 1.1;
 }
 
 .logo::before {

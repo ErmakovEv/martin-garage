@@ -5,7 +5,6 @@ import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
 import SecondPage from './SecondPage';
 import CATEGORIESMAP from '../utils/utils';
-
 import './Pages.css';
 
 type IMyContext = {
@@ -17,6 +16,22 @@ export const MyContext = createContext<IMyContext | undefined>(undefined);
 
 function Pages() {
   const [workList, setWorkList] = useState<Set<string>>(new Set<string>());
+
+  const [numberPage, setNumberPage] = useState<number>(1);
+
+  const refSecond = useRef<HTMLDivElement | null>(null);
+
+  const refFirst = useRef<HTMLDivElement | null>(null);
+
+  const handleClickPage = () => {
+    if (numberPage === 1) {
+      refSecond.current?.scrollIntoView({ behavior: 'smooth' });
+      setNumberPage(2);
+    } else {
+      refFirst.current?.scrollIntoView({ behavior: 'smooth' });
+      setNumberPage(1);
+    }
+  };
 
   const [bottonActive, setBottonActive] = useState<keyof typeof CATEGORIESMAP>(
     CATEGORIESMAP.none.name
@@ -44,21 +59,16 @@ function Pages() {
     setBottonActive(CATEGORIESMAP.none.name);
   };
 
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  const handleClickFirstPage = () => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <MyContext.Provider value={{ cb: handlerChangeList, list: workList }}>
       <div className="container">
         <section>
           <Header
             handlerOpenDrawer={toggleDrawer}
-            handleClickFirstPage={handleClickFirstPage}
+            handleClickPage={handleClickPage}
+            title={numberPage === 1 ? 'Запись на сервер' : 'Вернуться наверх'}
           />
-          <MainPage bottonActive={bottonActive} />
+          <MainPage bottonActive={bottonActive} ref={refFirst} />
           <CustomDialog bottonActive={bottonActive} handleClose={handleClose} />
           <SwipeableEdgeDrawer
             isOpen={openDrawer}
@@ -66,7 +76,7 @@ function Pages() {
             bottonActive={bottonActive}
           />
         </section>
-        <SecondPage ref={ref} />
+        <SecondPage ref={refSecond} />
       </div>
     </MyContext.Provider>
   );
