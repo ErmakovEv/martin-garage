@@ -1,4 +1,4 @@
-import AppBar from '@mui/material/AppBar';
+// import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MainLogo from '../MainLogo/MainLogo';
@@ -11,16 +11,19 @@ type HeaderProps = {
 };
 
 const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
-  <AppBar
-    position="fixed"
-    sx={{
-      backgroundColor: '#1b1b1b',
+  <div
+    style={{
+      // backgroundColor: '#1b1b1b',
+      position: 'fixed',
+      top: 0,
+      zIndex: 100,
       height: '5em',
       width: '100%',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      backdropFilter: 'blur(40px)',
     }}
   >
     <Box
@@ -57,6 +60,6 @@ const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
         </Button>
       </Box>
     </Box>
-  </AppBar>
+  </div>
 );
 export default Header;

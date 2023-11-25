@@ -2,7 +2,7 @@
 import { forwardRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Car from '../Car/Car';
-import { OrbitControls, Stage } from '@react-three/drei';
+import { OrbitControls, Stage, MeshReflectorMaterial } from '@react-three/drei';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
 import CATEGORIESMAP from '../utils/utils';
@@ -18,11 +18,28 @@ const MainPage = forwardRef<HTMLElement, MainPageProps>(
         <div className="main-page">
           <Canvas>
             <color attach="background" args={['#0b180c']} />
+            <fog attach="fog" args={['#0b180c', 10, 20]} />
             <Stage environment="city" intensity={0.1} castShadow={false}>
               <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
             </Stage>
+            <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-0.5}>
+              <planeGeometry args={[170, 170]} />
+              <MeshReflectorMaterial
+                blur={[1, 1]}
+                resolution={1080}
+                // mixBlur={0.8}
+                // mixStrength={10}
+                roughness={1}
+                depthScale={1.2}
+                minDepthThreshold={1.4}
+                maxDepthThreshold={5.4}
+                color="grey"
+                metalness={1}
+                mirror={1}
+              />
+            </mesh>
             <OrbitControls
-              enableZoom={true}
+              enableZoom={false}
               enablePan={true}
               enableRotate={true}
               zoomSpeed={0.6}
