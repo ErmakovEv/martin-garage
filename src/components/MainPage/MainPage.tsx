@@ -18,7 +18,7 @@ const MainPage = forwardRef<HTMLElement, MainPageProps>(
         <div className="main-page">
           <Canvas>
             <color attach="background" args={['#0b180c']} />
-            <fog attach="fog" args={['#0b180c', 10, 20]} />
+            {/* <fog attach="fog" args={['#0b180c', 10, 20]} /> */}
             <Stage environment="sunset" intensity={0.1}>
               <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
             </Stage>
