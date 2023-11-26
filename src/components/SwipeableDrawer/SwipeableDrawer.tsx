@@ -14,6 +14,7 @@ interface SwipeableEdgeDrawerProps {
   isOpen: boolean;
   handlerOpen: (open: boolean) => void;
   bottonActive: keyof typeof CATEGORIESMAP;
+  handlerSetBottonActive: (newBottonActive: keyof typeof CATEGORIESMAP) => void;
 }
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -33,6 +34,7 @@ const Puller = styled(Box)(({ theme }) => ({
 export default function SwipeableEdgeDrawer({
   isOpen,
   handlerOpen,
+  handlerSetBottonActive,
 }: SwipeableEdgeDrawerProps) {
   return (
     <>
@@ -72,10 +74,12 @@ export default function SwipeableEdgeDrawer({
             sx={{
               p: 1,
               color: 'white',
+              fontSize: '1.8vh',
               backgroundColor: '#1b1b1b',
+              fontFamily: ['Oswald'],
             }}
           >
-            51 results
+            Конфигуратор работ
           </Typography>
         </StyledBox>
 
@@ -89,7 +93,9 @@ export default function SwipeableEdgeDrawer({
           }}
         >
           <Box component="div" sx={{ height: '100%' }}>
-            <CustomButtonsGroup />
+            <CustomButtonsGroup
+              handlerSetBottonActive={handlerSetBottonActive}
+            />
           </Box>
         </StyledBox>
       </SwipeableDrawer>

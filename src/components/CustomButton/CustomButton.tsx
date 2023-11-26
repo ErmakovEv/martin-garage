@@ -7,12 +7,18 @@ import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
 type CustomButtonProps = {
   k: keyof typeof CATEGORIESMAP;
   value: ICategoryObj;
+  handlerSetBottonActive: (newBottonActive: keyof typeof CATEGORIESMAP) => void;
 };
 
-const CustomButton = ({ k, value }: CustomButtonProps) => {
+const CustomButton = ({
+  k,
+  value,
+  handlerSetBottonActive,
+}: CustomButtonProps) => {
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const handleToggle = () => {
+    handlerSetBottonActive(k);
     setIsActive((prevActive) => !prevActive);
   };
 
@@ -38,7 +44,6 @@ const CustomButton = ({ k, value }: CustomButtonProps) => {
                         <br />
                       </span>
                       <span>
-                        <br />
                         {value
                           ? value.img && (
                               <value.img
@@ -63,7 +68,10 @@ const CustomButton = ({ k, value }: CustomButtonProps) => {
       <TemporaryDrawer
         bottonActive={k}
         open={isActive}
-        closeDrawer={() => setIsActive(false)}
+        closeDrawer={() => {
+          setIsActive(false);
+          handlerSetBottonActive(CATEGORIESMAP.none.name);
+        }}
       />
     </>
   );

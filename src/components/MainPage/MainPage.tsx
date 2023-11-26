@@ -20,7 +20,7 @@ const MainPage = forwardRef<HTMLElement, MainPageProps>(
             {/* <cubeTexture /> */}
             {/* <color attach="background" args={['#0b180c']} /> */}
             {/* <fog attach="fog" args={['#0b180c', 10, 20]} /> */}
-            <Stage environment="sunset" intensity={0.1}>
+            <Stage environment="city" intensity={0.1}>
               <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
             </Stage>
             {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-0.5}>

@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 
 type ToggleButtonProps = {
   handleClickPage: () => void;
-  title: string;
+  title: React.ReactNode;
 };
 
 function ToggleButton({ handleClickPage, title }: ToggleButtonProps) {
@@ -10,15 +10,17 @@ function ToggleButton({ handleClickPage, title }: ToggleButtonProps) {
     <Button
       onClick={handleClickPage}
       sx={{
-        color: 'black',
-        fontSize: '2vmin',
-        fontFamily: 'Roboto',
-        width: '15vmin',
+        color: 'white',
+        fontSize: '1.2vh',
         lineHeight: '1.2',
+        borderColor: '#29b249',
+        fontFamily: ['Oswald'],
+        '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
       }}
       size="small"
-      variant="contained"
+      variant="text"
     >
+      <div></div>
       {title}
     </Button>
   );

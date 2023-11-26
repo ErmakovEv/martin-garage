@@ -7,7 +7,7 @@ import ToggleButton from '../ToggleButton/ToggleButton';
 type HeaderProps = {
   handlerOpenDrawer: (open: boolean) => void;
   handleClickPage: () => void;
-  title: string;
+  title: React.ReactNode;
 };
 
 const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
@@ -17,7 +17,7 @@ const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
       position: 'fixed',
       top: 0,
       zIndex: 100,
-      height: '5em',
+      height: '7em',
       width: '100%',
       display: 'flex',
       flexDirection: 'row',
@@ -47,16 +47,17 @@ const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
         <Button
           onClick={() => handlerOpenDrawer(true)}
           sx={{
-            color: 'black',
-            fontSize: '2vmin',
-            fontFamily: 'Roboto',
-            width: '15vmin',
+            color: 'white',
+            fontSize: '1.2vh',
             lineHeight: '1.2',
+            borderColor: '#29b249',
+            fontFamily: ['Oswald'],
+            '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
           }}
           size="small"
-          variant="contained"
+          variant="text"
         >
-          Выбор ремонта
+          Выбор <br /> ремонта
         </Button>
       </Box>
     </Box>

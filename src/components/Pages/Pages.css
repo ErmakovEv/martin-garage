@@ -27,7 +27,7 @@
 }
 
 .container section:nth-of-type(even) {
-  background-color: rgb(7, 37, 114);
+  background-color: #29b249;
   /* color: black; */
   position: relative;
 }

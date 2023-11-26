@@ -1,6 +1,5 @@
 import { useState, createContext, useRef } from 'react';
 import MainPage from '../MainPage/MainPage';
-import CustomDialog from '../CustomDialog/CustomDialog';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
 import SecondPage from './SecondPage';
@@ -55,9 +54,9 @@ function Pages() {
     }
   };
 
-  const handleClose = () => {
-    setBottonActive(CATEGORIESMAP.none.name);
-  };
+  const handlerSetBottonActive = (
+    newBottonActive: keyof typeof CATEGORIESMAP
+  ) => setBottonActive(newBottonActive);
 
   return (
     <MyContext.Provider value={{ cb: handlerChangeList, list: workList }}>
@@ -66,14 +65,28 @@ function Pages() {
           <Header
             handlerOpenDrawer={toggleDrawer}
             handleClickPage={handleClickPage}
-            title={numberPage === 1 ? 'Запись на сервер' : 'Вернуться наверх'}
+            title={
+              numberPage === 1 ? (
+                <>
+                  <>Запись на </>
+                  <br />
+                  <>сервис</>
+                </>
+              ) : (
+                <>
+                  <>Вернуться </>
+                  <br />
+                  <>назад</>
+                </>
+              )
+            }
           />
           <MainPage bottonActive={bottonActive} ref={refFirst} />
-          <CustomDialog bottonActive={bottonActive} handleClose={handleClose} />
           <SwipeableEdgeDrawer
             isOpen={openDrawer}
             handlerOpen={toggleDrawer}
             bottonActive={bottonActive}
+            handlerSetBottonActive={handlerSetBottonActive}
           />
         </section>
         <SecondPage ref={refSecond} />
