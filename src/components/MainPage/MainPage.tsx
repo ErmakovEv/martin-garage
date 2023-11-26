@@ -17,14 +17,15 @@ const MainPage = forwardRef<HTMLElement, MainPageProps>(
       <Suspense fallback={<Loader />}>
         <div className="main-page">
           <Canvas>
-            <color attach="background" args={['#0b180c']} />
+            {/* <cubeTexture /> */}
+            {/* <color attach="background" args={['#0b180c']} /> */}
             {/* <fog attach="fog" args={['#0b180c', 10, 20]} /> */}
             <Stage environment="sunset" intensity={0.1}>
               <Car active={bottonActive as keyof typeof CATEGORIESMAP} />
             </Stage>
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-0.5}>
+            {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-0.5}>
               <planeGeometry args={[170, 170]} />
-              {/* <MeshReflectorMaterial
+              <MeshReflectorMaterial
                 blur={[1, 1]}
                 resolution={1080}
                 // mixBlur={0.8}
@@ -36,9 +37,9 @@ const MainPage = forwardRef<HTMLElement, MainPageProps>(
                 color="grey"
                 metalness={1}
                 mirror={1}
-              /> */}
+              />
               <meshStandardMaterial color="#000" />
-            </mesh>
+            </mesh> */}
             <OrbitControls
               enableZoom={false}
               enablePan={true}
