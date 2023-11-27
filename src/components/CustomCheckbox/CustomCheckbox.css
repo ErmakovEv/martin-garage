@@ -4,11 +4,11 @@
   --background-image: #fff, #006baf33;
   --text-color: #666;
   --text-headline: #000;
-  --card-shadow: #0082ff;
+  --card-shadow: #29b249;
   /* --card-height: ; */
-  --card-width: 15vmax;
+  --card-width: 10vmax;
   --card-radius: 12px;
-  --header-height: 5vmax;
+  --header-height: 5vh;
   --blend-mode: overlay;
   --transition: 0.15s;
   user-select: none;
@@ -128,7 +128,7 @@
 }
 
 .card__body-cover-checkbox {
-  background: var(--check-bg, var(--background-checkbox));
+  background: #29b249;
   border: 2px solid var(--check-border, #fff);
   position: absolute;
   right: 10px;
@@ -147,7 +147,7 @@
 
 .card__body-cover-checkbox--svg {
   width: 13px;
-  height: 11px;
+  height: 12px;
   display: inline-block;
   vertical-align: top;
   fill: none;
@@ -169,6 +169,7 @@
 
 .card__body-header-title {
   color: var(--text-headline);
+  font-family: 'Oswald';
   font-weight: 700;
   font-size: 1vh;
   margin-bottom: 1px;
@@ -176,6 +177,7 @@
 
 .card__body-header-subtitle {
   color: var(--text-color);
+  font-family: 'Oswald';
   font-weight: 500;
   font-size: 0.7vh;
 }

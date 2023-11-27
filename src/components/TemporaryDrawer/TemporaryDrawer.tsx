@@ -23,7 +23,7 @@ export default function TemporaryDrawer({
       onClose={closeDrawer}
       PaperProps={{
         sx: {
-          maxHeight: '20vmax',
+          maxHeight: '2vh',
           m: 0,
           p: 0,
         },

@@ -34,10 +34,6 @@ function CustomTabPanel(props: TabPanelProps) {
             display: 'flex',
             alignItems: 'start',
             width: '100%',
-            // height: '20vh',
-            // justifyContent: 'space-around',
-
-            // backgroundColor: 'red',
           }}
           className={'drawer-section'}
         >
@@ -76,16 +72,22 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
           borderColor: 'divider',
           width: '100%',
           display: 'flex',
-          color: 'white',
+          color: '#29b249',
         }}
       >
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          sx={{ color: '#29b249', fontFamily: ['Oswald'] }}
+          textColor="primary"
         >
           <Tab label="Ремонт" {...a11yProps(0)} sx={{ color: 'white' }} />
-          <Tab label="ТО" {...a11yProps(1)} sx={{ color: 'white' }} />
+          <Tab
+            label="Тех.обслуживание"
+            {...a11yProps(1)}
+            sx={{ color: 'white' }}
+          />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>

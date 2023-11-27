@@ -44,9 +44,9 @@ const CustomCheckbox = ({ value, onChange, checked }: CustomCheckboxProps) => {
           </div>
           <div className="card__body-header">
             <div className="card__body-header-title">{value}</div>
-            <div className="card__body-header-subtitle">
+            {/* <div className="card__body-header-subtitle">
               {data[0].description}
-            </div>
+            </div> */}
           </div>
         </div>
       </label>

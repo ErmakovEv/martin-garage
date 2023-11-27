@@ -51,7 +51,6 @@ const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
             fontSize: '1.2vh',
             lineHeight: '1.2',
             borderColor: '#29b249',
-            fontFamily: ['Oswald'],
             '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
           }}
           size="small"
