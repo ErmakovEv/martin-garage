@@ -41,13 +41,7 @@ const Spinner = () => {
 
         {/* Маска для заполнения цветом */}
         <mask id="mask" x="0" y="0" width="100%" height="100%">
-          <rect
-            x="0"
-            y={`${100 - progress}%`}
-            width="100%"
-            height={`${progress}%`}
-            fill="white"
-          />
+          <rect x="0" y="0" width={`${progress}%`} height="100%" fill="white" />
         </mask>
 
         {/* Заливка цветом */}
