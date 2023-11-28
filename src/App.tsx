@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
-import Spinner from './components/Spinner/Spinner';
+
+import SpinnerMask from './components/SpinnerMask/SpinnerMask';
 
 const LazyMain = lazy(() => import('./components/Main/Main'));
 
@@ -17,7 +18,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<SpinnerMask />}>
       <ThemeProvider theme={theme}>
         <div className="App">
           <LazyMain />

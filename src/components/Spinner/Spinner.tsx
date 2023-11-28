@@ -16,7 +16,7 @@ const Spinner = () => {
         }
         return newProgress;
       });
-    }, 1500); // Имитация процесса загрузки каждую секунду
+    }, 200); // Имитация процесса загрузки каждую секунду
 
     return () => clearInterval(interval);
   }, []);
@@ -32,6 +32,7 @@ const Spinner = () => {
         margin: 0,
         padding: 0,
         background: 'radial-gradient(#0e300e, #000000)',
+        // background: 'red',
       }}
     >
       <svg width="200" height="200" viewBox="0 0 200 200">

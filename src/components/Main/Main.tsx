@@ -1,15 +1,15 @@
 import Pages from '../Pages/Pages';
 import { useEffect, useState } from 'react';
-import SpinnerMask from '../SpinnerMask/SpinnerMask';
+import Spinner from '../Spinner/Spinner';
 
 function Main() {
   const [load, setLoad] = useState<boolean>(false);
 
   useEffect(() => {
-    setTimeout(() => setLoad(true), 2000);
+    setTimeout(() => setLoad(true), 3000);
   }, []);
 
-  return !load ? <SpinnerMask /> : <Pages />;
+  return !load ? <Spinner /> : <Pages />;
 }
 
 export default Main;
