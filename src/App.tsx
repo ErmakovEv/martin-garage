@@ -1,5 +1,8 @@
-import Pages from './components/Pages/Pages';
+import { Suspense, lazy } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
+import Spinner from './components/Spinner/Spinner';
+
+const LazyMain = lazy(() => import('./components/Main/Main'));
 
 const theme = createTheme({
   palette: {
@@ -14,11 +17,13 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <Pages />
-      </div>
-    </ThemeProvider>
+    <Suspense fallback={<Spinner />}>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <LazyMain />
+        </div>
+      </ThemeProvider>
+    </Suspense>
   );
 }
 
