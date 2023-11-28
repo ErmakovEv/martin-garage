@@ -10,7 +10,6 @@ function Main() {
   }, []);
 
   return !load ? <SpinnerMask /> : <Pages />;
-  // return <SpinnerMask />;
 }
 
 export default Main;
