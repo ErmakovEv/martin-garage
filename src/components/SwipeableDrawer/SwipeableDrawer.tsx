@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { grey } from '@mui/material/colors';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import CustomButtonsGroup from '../CustomButtonsGroup/CustomButtonsGroup';
 import CATEGORIESMAP from '../utils/utils';
@@ -21,16 +20,6 @@ const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'light' ? '#fff' : grey[800],
 }));
 
-const Puller = styled(Box)(({ theme }) => ({
-  width: 30,
-  height: 2,
-  backgroundColor: theme.palette.mode === 'light' ? grey[300] : grey[900],
-  borderRadius: 3,
-  position: 'absolute',
-  top: 5,
-  left: 'calc(50% - 15px)',
-}));
-
 export default function SwipeableEdgeDrawer({
   isOpen,
   handlerOpen,
@@ -43,7 +32,6 @@ export default function SwipeableEdgeDrawer({
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
             height: `calc(22% - ${drawerBleeding}px)`,
-            overflow: 'visible',
           },
         }}
       />
@@ -57,32 +45,8 @@ export default function SwipeableEdgeDrawer({
         ModalProps={{
           keepMounted: true,
         }}
+        sx={{ position: 'fixed' }}
       >
-        <StyledBox
-          sx={{
-            position: 'absolute',
-            top: -drawerBleeding,
-            borderTopLeftRadius: 8,
-            borderTopRightRadius: 8,
-            visibility: 'visible',
-            right: 0,
-            left: 0,
-          }}
-        >
-          <Puller />
-          <Typography
-            sx={{
-              p: 1,
-              color: 'white',
-              fontSize: '1.8vh',
-              backgroundColor: '#1b1b1b',
-              fontFamily: ['Oswald'],
-            }}
-          >
-            Конфигуратор работ
-          </Typography>
-        </StyledBox>
-
         <StyledBox
           sx={{
             px: 2,

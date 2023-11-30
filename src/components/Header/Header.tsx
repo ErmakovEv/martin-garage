@@ -23,7 +23,7 @@ const Header = ({ handlerOpenDrawer, handleClickPage, title }: HeaderProps) => (
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backdropFilter: 'blur(40px)',
+      backdropFilter: 'blur(10px)',
     }}
   >
     <Box

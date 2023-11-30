@@ -1,4 +1,5 @@
 import { useState, createContext, useRef } from 'react';
+import { Box } from '@mui/material';
 import MainPage from '../MainPage/MainPage';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
@@ -82,12 +83,14 @@ function Pages() {
             }
           />
           <MainPage bottonActive={bottonActive} ref={refFirst} />
-          <SwipeableEdgeDrawer
-            isOpen={openDrawer}
-            handlerOpen={toggleDrawer}
-            bottonActive={bottonActive}
-            handlerSetBottonActive={handlerSetBottonActive}
-          />
+          <Box component="div" sx={{ position: 'absolute' }}>
+            <SwipeableEdgeDrawer
+              isOpen={openDrawer}
+              handlerOpen={toggleDrawer}
+              bottonActive={bottonActive}
+              handlerSetBottonActive={handlerSetBottonActive}
+            />
+          </Box>
         </section>
         <SecondPage ref={refSecond} />
       </div>
