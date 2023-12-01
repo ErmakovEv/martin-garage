@@ -1,11 +1,11 @@
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
-import React from 'react';
-import './CustomTabs.css';
-import { MyContext } from '../Pages/Pages';
-import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
-import CATEGORIESMAP from '../utils/utils';
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import React from "react";
+import "./CustomTabs.css";
+import { MyContext } from "../Pages/Pages";
+import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
+import CATEGORIESMAP from "../utils/utils";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -24,19 +24,17 @@ function CustomTabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
       style={{}}
-      className="drawer-container"
-    >
+      className="drawer-container">
       {value === index && (
         <Box
-          component={'div'}
+          component={"div"}
           sx={{
             p: 1,
-            display: 'flex',
-            alignItems: 'start',
-            width: '100%',
+            display: "flex",
+            alignItems: "start",
+            width: "100%",
           }}
-          className={'drawer-section'}
-        >
+          className={"drawer-section"}>
           {children}
         </Box>
       )}
@@ -47,7 +45,7 @@ function CustomTabPanel(props: TabPanelProps) {
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
 }
 
@@ -64,29 +62,27 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
   };
 
   return (
-    <Box component={'div'} sx={{ width: '100%' }}>
+    <Box component={"div"} sx={{ width: "100%" }}>
       <Box
-        component={'div'}
+        component={"div"}
         sx={{
           borderBottom: 1,
-          borderColor: 'divider',
-          width: '100%',
-          display: 'flex',
-          color: '#29b249',
-        }}
-      >
+          borderColor: "divider",
+          width: "100%",
+          display: "flex",
+          color: "#29b249",
+        }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
-          sx={{ color: '#29b249', fontFamily: ['Oswald'] }}
-          textColor="primary"
-        >
-          <Tab label="Ремонт" {...a11yProps(0)} sx={{ color: 'white' }} />
+          sx={{ color: "#29b249", fontFamily: ["Oswald"] }}
+          textColor="primary">
+          <Tab label="Ремонт" {...a11yProps(0)} sx={{ color: "white" }} />
           <Tab
             label="Тех.обслуживание"
             {...a11yProps(1)}
-            sx={{ color: 'white' }}
+            sx={{ color: "white" }}
           />
         </Tabs>
       </Box>
