@@ -10,6 +10,7 @@ import './Pages.css';
 type IMyContext = {
   cb: (checkboxValue: string) => void;
   list: Set<string>;
+  cb2?: (newSet: Set<string>) => void;
 };
 
 export const MyContext = createContext<IMyContext | undefined>(undefined);
@@ -55,12 +56,18 @@ function Pages() {
     }
   };
 
+  const handleChangeSet = (newSet: Set<string>) => {
+    setWorkList(newSet);
+  };
+
   const handlerSetBottonActive = (
     newBottonActive: keyof typeof CATEGORIESMAP
   ) => setBottonActive(newBottonActive);
 
   return (
-    <MyContext.Provider value={{ cb: handlerChangeList, list: workList }}>
+    <MyContext.Provider
+      value={{ cb: handlerChangeList, list: workList, cb2: handleChangeSet }}
+    >
       <div className="container">
         <section>
           <Header

@@ -11,10 +11,10 @@ function CustomButtonsGroup({ handlerSetBottonActive }: CustomButtonsGroup) {
     <div className="buttons-group">
       {Object.entries(CATEGORIESMAP).map(([k, value]) => {
         if (value.name !== 'none') {
-          console.log('!!!!!', k);
           return (
             <CustomButton
               k={k as keyof typeof CATEGORIESMAP}
+              key={k}
               value={value}
               handlerSetBottonActive={handlerSetBottonActive}
             />
