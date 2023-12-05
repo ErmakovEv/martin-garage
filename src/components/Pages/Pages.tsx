@@ -22,9 +22,10 @@ function Pages() {
 
   const [numberPage, setNumberPage] = useState<number>(1);
 
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
 
   const refSecond = useRef<HTMLDivElement | null>(null);
 
@@ -113,17 +114,17 @@ function Pages() {
           />
         </Box>
         <Modal
-          open={open}
+          open={openModal}
           onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
+          // aria-labelledby="modal-modal-title"
+          // aria-describedby="modal-modal-description"
         >
           <Box
             component="div"
             display="flex"
             justifyContent="center"
             alignItems="center"
-            minHeight="100vh"
+            minHeight="50vh"
           >
             <Box
               component="div"
