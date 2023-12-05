@@ -12,8 +12,8 @@ function Footer() {
       component="div"
       sx={{
         backgroundColor: 'blue',
-        height: '30%',
-        position: 'relative',
+        minHeight: '150px',
+        // position: 'relative',
       }}
     >
       <Box
