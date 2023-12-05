@@ -1,8 +1,8 @@
 import { forwardRef } from 'react';
 import { Box, TextField } from '@mui/material';
 // import CustomForm from '../Form/Form';
-import Footer from '../Footer/Footer';
-import bg from '../../img/aston-martin.jpeg';
+// import Footer from '../Footer/Footer';
+// import bg from '../../img/aston-martin.jpeg';
 
 const SecondPage = forwardRef<HTMLElement>((_, ref) => {
   // const [open, setOpen] = useState(false);
