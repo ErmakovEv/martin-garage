@@ -4,6 +4,7 @@ import MainPage from '../MainPage/MainPage';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
 import SecondPage from './SecondPage';
+import ThirdPage from './ThirdPage';
 import CATEGORIESMAP from '../utils/utils';
 import './Pages.css';
 
@@ -24,6 +25,8 @@ function Pages() {
 
   const refFirst = useRef<HTMLDivElement | null>(null);
 
+  const refThird = useRef<HTMLDivElement | null>(null);
+
   const handleClickPage = () => {
     if (numberPage === 1) {
       refSecond.current?.scrollIntoView({ behavior: 'smooth' });
@@ -32,6 +35,10 @@ function Pages() {
       refFirst.current?.scrollIntoView({ behavior: 'smooth' });
       setNumberPage(1);
     }
+  };
+
+  const handleClickThirdPage = () => {
+    refThird.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const [bottonActive, setBottonActive] = useState<keyof typeof CATEGORIESMAP>(
@@ -73,6 +80,7 @@ function Pages() {
           <Header
             handlerOpenDrawer={toggleDrawer}
             handleClickPage={handleClickPage}
+            handleClickThirdPage={handleClickThirdPage}
             title={
               numberPage === 1 ? (
                 <>
@@ -100,6 +108,9 @@ function Pages() {
           </Box>
         </section>
         <SecondPage ref={refSecond} />
+        <section>
+          <ThirdPage ref={refThird} />
+        </section>
       </div>
     </MyContext.Provider>
   );
