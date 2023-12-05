@@ -116,7 +116,7 @@ const CustomForm = () => {
                 InputLabelProps={{ style: { fontSize: '1.4vh' } }}
               />
             </Box>
-            <Box
+            {/* <Box
               component="div"
               sx={{
                 '& .MuiTextField-root': { mb: 1, width: '100%' },
@@ -132,8 +132,8 @@ const CustomForm = () => {
                 sx={{ width: '100%' }}
                 InputLabelProps={{ style: { fontSize: '1.4vh' } }}
               />
-            </Box>
-            <Box
+            </Box> */}
+            {/* <Box
               component="div"
               sx={{
                 '& .MuiTextField-root': { mb: 1, width: '100%' },
@@ -149,8 +149,8 @@ const CustomForm = () => {
                 sx={{ width: '100%' }}
                 InputLabelProps={{ style: { fontSize: '1.4vh' } }}
               />
-            </Box>
-            <Box
+            </Box> */}
+            {/* <Box
               component="div"
               sx={{
                 '& .MuiTextField-root': { mb: 1, width: '100%' },
@@ -166,7 +166,7 @@ const CustomForm = () => {
                 sx={{ width: '100%' }}
                 InputLabelProps={{ style: { fontSize: '1.3vh' } }}
               />
-            </Box>
+            </Box> */}
             <Box component="div">
               <Autocomplete
                 limitTags={1}
