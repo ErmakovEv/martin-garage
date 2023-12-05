@@ -3,7 +3,7 @@ import { Box, Modal, TextField } from '@mui/material';
 import MainPage from '../MainPage/MainPage';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
-// import SecondPage from './SecondPage';
+import SecondPage from './SecondPage';
 // import ThirdPage from './ThirdPage';
 // import CustomForm from '../Form/Form';
 import CATEGORIESMAP from '../utils/utils';
@@ -83,102 +83,102 @@ function Pages() {
       value={{ cb: handlerChangeList, list: workList, cb2: handleChangeSet }}
     >
       <div className="container">
-        {/* <section> */}
-        <Header
-          handlerOpenDrawer={toggleDrawer}
-          handleClickPage={handleClickPage}
-          handleClickThirdPage={handleClickThirdPage}
-          title={
-            numberPage === 1 ? (
-              <>
-                <>Запись на </>
-                <br />
-                <>сервис</>
-              </>
-            ) : (
-              <>
-                <>Вернуться</>
-                <br />
-                <>назад</>
-              </>
-            )
-          }
-        />
-        <MainPage bottonActive={bottonActive} ref={refFirst} />
-        <Box component="div" sx={{ position: 'absolute' }}>
-          <SwipeableEdgeDrawer
-            isOpen={openDrawer}
-            handlerOpen={toggleDrawer}
-            bottonActive={bottonActive}
-            handlerSetBottonActive={handlerSetBottonActive}
+        <section>
+          <Header
+            handlerOpenDrawer={toggleDrawer}
+            handleClickPage={handleClickPage}
+            handleClickThirdPage={handleClickThirdPage}
+            title={
+              numberPage === 1 ? (
+                <>
+                  <>Запись на </>
+                  <br />
+                  <>сервис</>
+                </>
+              ) : (
+                <>
+                  <>Вернуться</>
+                  <br />
+                  <>назад</>
+                </>
+              )
+            }
           />
-        </Box>
-        <Modal
-          open={openModal}
-          onClose={handleClose}
-          // aria-labelledby="modal-modal-title"
-          // aria-describedby="modal-modal-description"
-        >
-          <Box
-            component="div"
-            display="flex"
-            justifyContent="center"
-            alignItems="start"
-            minHeight="50vh"
-            mt={2}
+          <MainPage bottonActive={bottonActive} ref={refFirst} />
+          <Box component="div" sx={{ position: 'absolute' }}>
+            <SwipeableEdgeDrawer
+              isOpen={openDrawer}
+              handlerOpen={toggleDrawer}
+              bottonActive={bottonActive}
+              handlerSetBottonActive={handlerSetBottonActive}
+            />
+          </Box>
+          <Modal
+            open={openModal}
+            onClose={handleClose}
+            // aria-labelledby="modal-modal-title"
+            // aria-describedby="modal-modal-description"
           >
             <Box
               component="div"
-              bgcolor="#fff"
-              maxWidth="420px"
-              boxShadow="6"
-              borderRadius="6px"
-              margin="5px"
-              sx={{ paddingX: { xs: '20px', sm: '30px', xl: '40px' } }}
-              paddingY="40px"
+              display="flex"
+              justifyContent="center"
+              alignItems="start"
+              minHeight="50vh"
+              mt={2}
             >
-              <TextField
-                id="outlined-basic"
-                label="e-mail"
-                // variant="standard"
-                color="primary"
-                type="email"
-                name="user_email"
-                size="small"
-                sx={{ width: '100%' }}
-                InputProps={{ style: { color: 'white' } }}
-                InputLabelProps={{ style: { fontSize: '1.4vh' } }}
-              />
-              <TextField
-                id="outlined-basic"
-                label="e-mail"
-                // variant="standard"
-                color="primary"
-                type="email"
-                name="user_email"
-                size="small"
-                sx={{ width: '100%' }}
-                InputProps={{ style: { color: 'white' } }}
-                InputLabelProps={{ style: { fontSize: '1.4vh' } }}
-              />
-              <TextField
-                id="outlined-basic"
-                label="e-mail"
-                // variant="standard"
-                color="primary"
-                type="email"
-                name="user_email"
-                size="small"
-                sx={{ width: '100%' }}
-                InputProps={{ style: { color: 'white' } }}
-                InputLabelProps={{ style: { fontSize: '1.4vh' } }}
-              />
+              <Box
+                component="div"
+                bgcolor="#fff"
+                maxWidth="420px"
+                boxShadow="6"
+                borderRadius="6px"
+                margin="5px"
+                sx={{ paddingX: { xs: '20px', sm: '30px', xl: '40px' } }}
+                paddingY="40px"
+              >
+                <TextField
+                  id="outlined-basic"
+                  label="e-mail"
+                  // variant="standard"
+                  color="primary"
+                  type="email"
+                  name="user_email"
+                  size="small"
+                  sx={{ width: '100%' }}
+                  InputProps={{ style: { color: 'white' } }}
+                  InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+                />
+                <TextField
+                  id="outlined-basic"
+                  label="e-mail"
+                  // variant="standard"
+                  color="primary"
+                  type="email"
+                  name="user_email"
+                  size="small"
+                  sx={{ width: '100%' }}
+                  InputProps={{ style: { color: 'white' } }}
+                  InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+                />
+                <TextField
+                  id="outlined-basic"
+                  label="e-mail"
+                  // variant="standard"
+                  color="primary"
+                  type="email"
+                  name="user_email"
+                  size="small"
+                  sx={{ width: '100%' }}
+                  InputProps={{ style: { color: 'white' } }}
+                  InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+                />
+              </Box>
             </Box>
-          </Box>
-        </Modal>
-        {/* </section> */}
-        {/* <SecondPage ref={refSecond} />
-        <section>
+          </Modal>
+        </section>
+        <SecondPage ref={refSecond} />
+        {/* <section>
           <ThirdPage ref={refThird} />
         </section> */}
       </div>
