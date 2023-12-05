@@ -123,8 +123,9 @@ function Pages() {
             component="div"
             display="flex"
             justifyContent="center"
-            alignItems="center"
+            alignItems="start"
             minHeight="50vh"
+            mt={2}
           >
             <Box
               component="div"
