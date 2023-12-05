@@ -60,7 +60,7 @@ const CustomForm = () => {
         pb: 2,
         borderRadius: 3,
         width: '50%',
-        height: '250px',
+        maxHeight: '250px',
       }}
     >
       <form ref={form} onSubmit={sendEmail}>
