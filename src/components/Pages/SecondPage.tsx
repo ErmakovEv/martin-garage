@@ -10,7 +10,7 @@ const SecondPage = forwardRef<HTMLElement>((_, ref) => {
   // const handleClose = () => setOpen(false);
 
   return (
-    <section ref={ref} style={{ height: '100%' }}>
+    <section ref={ref}>
       {/* <Box
         component="div"
         sx={{
