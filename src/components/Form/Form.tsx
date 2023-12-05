@@ -53,13 +53,14 @@ const CustomForm = () => {
       sx={{
         backgroundColor: 'white',
         opacity: 0.8,
-        margin: 5,
+        margin: '0 auto',
         pl: 5,
         pr: 5,
         pt: 2,
         pb: 2,
         borderRadius: 3,
-        width: '40vmax',
+        width: '50%',
+        height: '250px',
       }}
     >
       <form ref={form} onSubmit={sendEmail}>
