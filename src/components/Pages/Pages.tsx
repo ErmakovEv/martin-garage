@@ -1,10 +1,11 @@
 import { useState, createContext, useRef } from 'react';
-import { Box } from '@mui/material';
+import { Box, Modal } from '@mui/material';
 import MainPage from '../MainPage/MainPage';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
-import SecondPage from './SecondPage';
-import ThirdPage from './ThirdPage';
+// import SecondPage from './SecondPage';
+// import ThirdPage from './ThirdPage';
+import CustomForm from '../Form/Form';
 import CATEGORIESMAP from '../utils/utils';
 import './Pages.css';
 
@@ -21,11 +22,15 @@ function Pages() {
 
   const [numberPage, setNumberPage] = useState<number>(1);
 
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const refSecond = useRef<HTMLDivElement | null>(null);
 
   const refFirst = useRef<HTMLDivElement | null>(null);
 
-  const refThird = useRef<HTMLDivElement | null>(null);
+  // const refThird = useRef<HTMLDivElement | null>(null);
 
   const handleClickPage = () => {
     if (numberPage === 1) {
@@ -38,7 +43,8 @@ function Pages() {
   };
 
   const handleClickThirdPage = () => {
-    refThird.current?.scrollIntoView({ behavior: 'smooth' });
+    // refThird.current?.scrollIntoView({ behavior: 'smooth' });
+    handleOpen();
   };
 
   const [bottonActive, setBottonActive] = useState<keyof typeof CATEGORIESMAP>(
@@ -76,41 +82,49 @@ function Pages() {
       value={{ cb: handlerChangeList, list: workList, cb2: handleChangeSet }}
     >
       <div className="container">
-        <section>
-          <Header
-            handlerOpenDrawer={toggleDrawer}
-            handleClickPage={handleClickPage}
-            handleClickThirdPage={handleClickThirdPage}
-            title={
-              numberPage === 1 ? (
-                <>
-                  <>Запись на </>
-                  <br />
-                  <>сервис</>
-                </>
-              ) : (
-                <>
-                  <>Вернуться</>
-                  <br />
-                  <>назад</>
-                </>
-              )
-            }
+        {/* <section> */}
+        <Header
+          handlerOpenDrawer={toggleDrawer}
+          handleClickPage={handleClickPage}
+          handleClickThirdPage={handleClickThirdPage}
+          title={
+            numberPage === 1 ? (
+              <>
+                <>Запись на </>
+                <br />
+                <>сервис</>
+              </>
+            ) : (
+              <>
+                <>Вернуться</>
+                <br />
+                <>назад</>
+              </>
+            )
+          }
+        />
+        <MainPage bottonActive={bottonActive} ref={refFirst} />
+        <Box component="div" sx={{ position: 'absolute' }}>
+          <SwipeableEdgeDrawer
+            isOpen={openDrawer}
+            handlerOpen={toggleDrawer}
+            bottonActive={bottonActive}
+            handlerSetBottonActive={handlerSetBottonActive}
           />
-          <MainPage bottonActive={bottonActive} ref={refFirst} />
-          <Box component="div" sx={{ position: 'absolute' }}>
-            <SwipeableEdgeDrawer
-              isOpen={openDrawer}
-              handlerOpen={toggleDrawer}
-              bottonActive={bottonActive}
-              handlerSetBottonActive={handlerSetBottonActive}
-            />
-          </Box>
-        </section>
-        <SecondPage ref={refSecond} />
+        </Box>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <CustomForm />
+        </Modal>
+        {/* </section> */}
+        {/* <SecondPage ref={refSecond} />
         <section>
           <ThirdPage ref={refThird} />
-        </section>
+        </section> */}
       </div>
     </MyContext.Provider>
   );
