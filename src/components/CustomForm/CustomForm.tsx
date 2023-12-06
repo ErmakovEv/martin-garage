@@ -73,7 +73,7 @@ const CustomForm = () => {
           component="div"
           sx={{
             color: '#29b249',
-            fontSize: '1.5vh',
+            fontSize: '15px',
             textAlign: 'center',
             fontFamily: ['Oswald'],
           }}
@@ -97,7 +97,7 @@ const CustomForm = () => {
               size="small"
               sx={{ width: '100%' }}
               InputProps={{ style: { color: 'white' } }}
-              InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+              InputLabelProps={{ style: { fontSize: '12px' } }}
             />
           </Box>
           <Box
@@ -114,7 +114,7 @@ const CustomForm = () => {
               size="small"
               name="user_phone"
               sx={{ width: '100%' }}
-              InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+              InputLabelProps={{ style: { fontSize: '12px' } }}
             />
           </Box>
           <Box
@@ -131,7 +131,7 @@ const CustomForm = () => {
               type="text"
               name="user_car"
               sx={{ width: '100%' }}
-              InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+              InputLabelProps={{ style: { fontSize: '12px' } }}
             />
           </Box>
           <Box
@@ -148,7 +148,7 @@ const CustomForm = () => {
               type="text"
               name="user_year_car"
               sx={{ width: '100%' }}
-              InputLabelProps={{ style: { fontSize: '1.4vh' } }}
+              InputLabelProps={{ style: { fontSize: '12px' } }}
             />
           </Box>
           <Box
@@ -165,7 +165,7 @@ const CustomForm = () => {
               type="tel"
               name="message"
               sx={{ width: '100%' }}
-              InputLabelProps={{ style: { fontSize: '1.3vh' } }}
+              InputLabelProps={{ style: { fontSize: '12px' } }}
             />
           </Box>
           <Box component="div">
@@ -218,7 +218,7 @@ const CustomForm = () => {
                   {...params}
                   label="Выбранные работы"
                   size="small"
-                  InputLabelProps={{ style: { fontSize: '1.3vh' } }}
+                  InputLabelProps={{ style: { fontSize: '12px' } }}
                 />
               )}
             />

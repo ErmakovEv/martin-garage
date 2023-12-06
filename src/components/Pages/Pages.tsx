@@ -129,7 +129,7 @@ function Pages() {
               <Box
                 component="div"
                 bgcolor="#fff"
-                maxWidth="420px"
+                width="70%"
                 boxShadow="6"
                 borderRadius="6px"
                 margin="5px"
