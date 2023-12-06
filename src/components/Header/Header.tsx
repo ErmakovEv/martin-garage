@@ -78,7 +78,8 @@ const Header = ({
           size="small"
           variant="text"
         >
-          Третья страница <br />
+          Запись <br />
+          на сервис
         </Button>
       </Box>
     </Box>

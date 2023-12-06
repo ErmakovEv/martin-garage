@@ -1,11 +1,10 @@
 import { useState, createContext, useRef } from 'react';
-import { Box, Modal, TextField } from '@mui/material';
+import { Box, Modal } from '@mui/material';
 import MainPage from '../MainPage/MainPage';
 import Header from '../Header/Header';
 import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
 import SecondPage from './SecondPage';
-// import ThirdPage from './ThirdPage';
-// import CustomForm from '../Form/Form';
+import CustomForm from '../CustomForm/CustomForm';
 import CATEGORIESMAP from '../utils/utils';
 import './Pages.css';
 
@@ -91,9 +90,9 @@ function Pages() {
             title={
               numberPage === 1 ? (
                 <>
-                  <>Запись на </>
+                  <>Информация</>
                   <br />
-                  <>сервис</>
+                  <>о сервисе</>
                 </>
               ) : (
                 <>
@@ -135,44 +134,9 @@ function Pages() {
                 borderRadius="6px"
                 margin="5px"
                 sx={{ paddingX: { xs: '20px', sm: '30px', xl: '40px' } }}
-                paddingY="40px"
+                paddingY="10px"
               >
-                <TextField
-                  id="outlined-basic"
-                  label="e-mail"
-                  // variant="standard"
-                  color="primary"
-                  type="email"
-                  name="user_email"
-                  size="small"
-                  sx={{ width: '100%' }}
-                  InputProps={{ style: { color: 'white' } }}
-                  InputLabelProps={{ style: { fontSize: '1.4vh' } }}
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="e-mail"
-                  // variant="standard"
-                  color="primary"
-                  type="email"
-                  name="user_email"
-                  size="small"
-                  sx={{ width: '100%' }}
-                  InputProps={{ style: { color: 'white' } }}
-                  InputLabelProps={{ style: { fontSize: '1.4vh' } }}
-                />
-                <TextField
-                  id="outlined-basic"
-                  label="e-mail"
-                  // variant="standard"
-                  color="primary"
-                  type="email"
-                  name="user_email"
-                  size="small"
-                  sx={{ width: '100%' }}
-                  InputProps={{ style: { color: 'white' } }}
-                  InputLabelProps={{ style: { fontSize: '1.4vh' } }}
-                />
+                <CustomForm />
               </Box>
             </Box>
           </Modal>
