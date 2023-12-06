@@ -6,6 +6,7 @@ import {
   Button,
   Autocomplete,
   Chip,
+  Typography,
 } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import { MyContext } from '../Pages/Pages';
@@ -28,12 +29,21 @@ const CustomForm = () => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
+    const works = context?.list ? [...context?.list].join(', ') : '';
+    const myFormData = new FormData(form.current as HTMLFormElement);
     e.preventDefault();
     emailjs
-      .sendForm(
+      .send(
         'service_tcd5wud',
         'template_xet8ugu',
-        form.current as HTMLFormElement,
+        {
+          user_name: myFormData.get('user_name'),
+          user_email: myFormData.get('user_email'),
+          user_phone: myFormData.get('user_phone'),
+          user_car: myFormData.get('user_car'),
+          user_year_car: myFormData.get('user_year_car'),
+          user_works: works,
+        },
         '4KwUVKA1wUPRuy_no'
       )
       .then(
@@ -48,21 +58,6 @@ const CustomForm = () => {
   };
 
   return (
-    // <Box
-    //   component="div"
-    //   sx={{
-    //     backgroundColor: 'white',
-    //     opacity: 0.8,
-    //     margin: '0 auto',
-    //     pl: 5,
-    //     pr: 5,
-    //     pt: 2,
-    //     pb: 2,
-    //     borderRadius: 3,
-    //     width: '10%',
-    //     maxHeight: '250px',
-    //   }}
-    // >
     <form ref={form} onSubmit={sendEmail}>
       <Stack
         spacing={1}
@@ -89,6 +84,25 @@ const CustomForm = () => {
           >
             <TextField
               id="outlined-basic"
+              label="Ваше имя"
+              // variant="standard"
+              color="primary"
+              type="text"
+              name="user_name"
+              size="small"
+              sx={{ width: '100%' }}
+              // InputProps={{ style: { color: 'white' } }}
+              InputLabelProps={{ style: { fontSize: '12px' } }}
+            />
+          </Box>
+          <Box
+            component="div"
+            sx={{
+              '& .MuiTextField-root': { mb: 1, width: '100%' },
+            }}
+          >
+            <TextField
+              id="outlined-basic"
               label="e-mail"
               // variant="standard"
               color="primary"
@@ -96,7 +110,7 @@ const CustomForm = () => {
               name="user_email"
               size="small"
               sx={{ width: '100%' }}
-              InputProps={{ style: { color: 'white' } }}
+              // InputProps={{ style: { color: 'white' } }}
               InputLabelProps={{ style: { fontSize: '12px' } }}
             />
           </Box>
@@ -203,11 +217,15 @@ const CustomForm = () => {
               getOptionLabel={(option) => option.title}
               renderTags={(tagValue, getTagProps) =>
                 tagValue.map((option, index) => (
-                  <Chip
-                    label={option ? option.title : ''}
-                    {...getTagProps({ index })}
-                    // disabled={fixedOptions.indexOf(option) !== -1}
-                  />
+                  <Typography sx={{ fontFamily: ['Oswald'] }}>
+                    <Chip
+                      label={option ? option.title : ''}
+                      sx={{ fontSize: '10px' }}
+                      size="small"
+                      {...getTagProps({ index })}
+                      // disabled={fixedOptions.indexOf(option) !== -1}
+                    />
+                  </Typography>
                 ))
               }
               isOptionEqualToValue={(option, value) =>
@@ -219,25 +237,28 @@ const CustomForm = () => {
                   label="Выбранные работы"
                   size="small"
                   InputLabelProps={{ style: { fontSize: '12px' } }}
+                  name="user_works"
                 />
               )}
             />
           </Box>
           <Box
             component="div"
-            sx={{ display: 'flex', justifyContent: 'center' }}
+            sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}
           >
             <Button
               type="submit"
               sx={{
                 color: '29b249',
-                fontSize: '1.5vh',
+                fontSize: '15px',
                 lineHeight: '1.2',
                 fontFamily: ['Oswald'],
                 '&:hover': {
                   backgroundColor: '29b249',
+                  color: 'white',
                 },
               }}
+              variant="contained"
             >
               ОТПРАВИТЬ
             </Button>
@@ -245,7 +266,6 @@ const CustomForm = () => {
         </Box>
       </Stack>
     </form>
-    // </Box>
   );
 };
 
