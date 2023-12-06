@@ -10,50 +10,34 @@ const SecondPage = forwardRef<HTMLElement>((_, ref) => {
   // const handleClose = () => setOpen(false);
 
   return (
-    <section ref={ref}>
+    <section
+      ref={ref}
+      style={{
+        backgroundImage: `url(${bg}) `,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        // alignItems: 'center',
+      }}
+    >
       <Box
         component="div"
         sx={{
-          height: '100%',
+          width: '100%',
+          height: '300px',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
-        <Box
-          component="div"
-          sx={{
-            scale: 0.2,
-            backgroundImage: `url(${bg}) `,
-            // filter: 'grayscale(50%) blur(2px)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            // height: '70%',
-            color: 'white',
-          }}
-        >
-          <Box
-            component="div"
-            sx={{
-              // zIndex: 1,
-              width: '100%',
-              height: '100vh',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              // pt: 10,
-            }}
-          >
-            {/* <Button onClick={handleOpen}>Открыть форму</Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <CustomForm />
-            </Modal> */}
-          </Box>
+        <Box component="div">
+          <h1>asd;lasdlaskdjasl</h1>
         </Box>
-        <Footer />
       </Box>
+      <Footer />
     </section>
   );
 });

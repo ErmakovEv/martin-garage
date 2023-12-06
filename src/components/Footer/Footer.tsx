@@ -12,7 +12,7 @@ function Footer() {
       component="div"
       sx={{
         backgroundColor: 'blue',
-        minHeight: '150px',
+        maxHeight: '250px',
         // position: 'relative',
       }}
     >

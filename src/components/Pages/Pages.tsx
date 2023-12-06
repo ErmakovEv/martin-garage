@@ -142,9 +142,6 @@ function Pages() {
           </Modal>
         </section>
         <SecondPage ref={refSecond} />
-        {/* <section>
-          <ThirdPage ref={refThird} />
-        </section> */}
       </div>
     </MyContext.Provider>
   );
