@@ -18,13 +18,13 @@ export default function Car({
         state.camera.position.lerp(vek.set(-3.5, 0.5, 0), 0.08);
         break;
       case CATEGORIESMAP.transmission.name:
-        state.camera.position.lerp(vek.set(-4, 0.1, -2), 0.08);
+        state.camera.position.lerp(vek.set(3.5, 1, 0), 0.08);
         break;
       case CATEGORIESMAP.suspension.name:
         state.camera.position.lerp(vek.set(-0.2, 0, -5), 0.08);
         break;
       case CATEGORIESMAP.electric.name:
-        state.camera.position.lerp(vek.set(-3, -0.2, 0.9), 0.08);
+        state.camera.position.lerp(vek.set(-3, 0.2, 0.5), 0.08);
         break;
       case CATEGORIESMAP.brakes.name:
         state.camera.position.lerp(vek.set(-1.2, -0.2, 1.6), 0.08);
