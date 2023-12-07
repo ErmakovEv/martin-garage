@@ -1,7 +1,7 @@
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import CATEGORIESMAP from '../utils/utils';
-import CustomTabs from '../CustomTabs/CustomTabs';
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import CATEGORIESMAP from "../utils/utils";
+import CustomTabs from "../CustomTabs/CustomTabs";
 
 interface TemporaryDrawerProps {
   bottonActive: keyof typeof CATEGORIESMAP;
@@ -16,29 +16,32 @@ export default function TemporaryDrawer({
 }: TemporaryDrawerProps) {
   return (
     <Drawer
-      anchor={'top'}
+      anchor={"top"}
       open={open}
       onClose={closeDrawer}
       PaperProps={{
         sx: {
           m: 0,
           p: 0,
-          minHeight: '26vh',
-          overflowY: 'hidden',
-          overlowX: 'auto',
-          backgroundColor: 'black',
+          minHeight: "26vh",
+          overflowY: "hidden",
+          overlowX: "auto",
+          backgroundColor: "black",
         },
       }}
-    >
+      slotProps={{
+        backdrop: {
+          invisible: true,
+        },
+      }}>
       <Box
-        component={'div'}
+        component={"div"}
         role="presentation"
         sx={{
-          color: 'white',
+          color: "white",
           m: 0,
           p: 0,
-        }}
-      >
+        }}>
         <CustomTabs bottonActive={bottonActive} />
       </Box>
     </Drawer>

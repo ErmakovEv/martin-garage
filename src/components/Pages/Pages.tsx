@@ -1,12 +1,12 @@
-import { useState, createContext, useRef } from 'react';
-import { Box, Modal } from '@mui/material';
-import MainPage from '../MainPage/MainPage';
-import Header from '../Header/Header';
-import SwipeableEdgeDrawer from '../SwipeableDrawer/SwipeableDrawer';
-import SecondPage from './SecondPage';
-import CustomForm from '../CustomForm/CustomForm';
-import CATEGORIESMAP from '../utils/utils';
-import './Pages.css';
+import { useState, createContext, useRef } from "react";
+import { Box, Modal } from "@mui/material";
+import MainPage from "../MainPage/MainPage";
+import Header from "../Header/Header";
+import SwipeableEdgeDrawer from "../SwipeableDrawer/SwipeableDrawer";
+import SecondPage from "./SecondPage";
+import CustomForm from "../CustomForm/CustomForm";
+import CATEGORIESMAP from "../utils/utils";
+import "./Pages.css";
 
 type IMyContext = {
   cb: (checkboxValue: string) => void;
@@ -34,10 +34,10 @@ function Pages() {
 
   const handleClickPage = () => {
     if (numberPage === 1) {
-      refSecond.current?.scrollIntoView({ behavior: 'smooth' });
+      refSecond.current?.scrollIntoView({ behavior: "smooth" });
       setNumberPage(2);
     } else {
-      refFirst.current?.scrollIntoView({ behavior: 'smooth' });
+      refFirst.current?.scrollIntoView({ behavior: "smooth" });
       setNumberPage(1);
     }
   };
@@ -79,14 +79,14 @@ function Pages() {
 
   return (
     <MyContext.Provider
-      value={{ cb: handlerChangeList, list: workList, cb2: handleChangeSet }}
-    >
+      value={{ cb: handlerChangeList, list: workList, cb2: handleChangeSet }}>
       <div className="container">
         <section>
           <Header
             handlerOpenDrawer={toggleDrawer}
             handleClickPage={handleClickPage}
             handleClickThirdPage={handleClickThirdPage}
+            pageNumber={numberPage}
             title={
               numberPage === 1 ? (
                 <>
@@ -104,7 +104,7 @@ function Pages() {
             }
           />
           <MainPage bottonActive={bottonActive} ref={refFirst} />
-          <Box component="div" sx={{ position: 'absolute' }}>
+          <Box component="div" sx={{ position: "absolute" }}>
             <SwipeableEdgeDrawer
               isOpen={openDrawer}
               handlerOpen={toggleDrawer}
@@ -124,8 +124,7 @@ function Pages() {
               justifyContent="center"
               alignItems="start"
               minHeight="50vh"
-              mt={2}
-            >
+              mt={2}>
               <Box
                 component="div"
                 bgcolor="#fff"
@@ -133,9 +132,8 @@ function Pages() {
                 boxShadow="6"
                 borderRadius="6px"
                 margin="5px"
-                sx={{ paddingX: { xs: '20px', sm: '30px', xl: '40px' } }}
-                paddingY="10px"
-              >
+                sx={{ paddingX: { xs: "20px", sm: "30px", xl: "40px" } }}
+                paddingY="10px">
                 <CustomForm />
               </Box>
             </Box>
