@@ -7,7 +7,6 @@ import ToggleButton from '../ToggleButton/ToggleButton';
 type HeaderProps = {
   handlerOpenDrawer: (open: boolean) => void;
   handleClickPage: () => void;
-  handleClickThirdPage: () => void;
   title: React.ReactNode;
   pageNumber: number;
 };
@@ -15,7 +14,6 @@ type HeaderProps = {
 const Header = ({
   handlerOpenDrawer,
   handleClickPage,
-  handleClickThirdPage,
   title,
   pageNumber,
 }: HeaderProps) => (
@@ -67,25 +65,6 @@ const Header = ({
           disabled={pageNumber === 1 ? false : true}
         >
           Выбор <br /> ремонта
-        </Button>
-      </Box>
-
-      <Box component={'div'}>
-        <Button
-          onClick={() => handleClickThirdPage()}
-          sx={{
-            color: 'white',
-            fontSize: '1.2vh',
-            lineHeight: '1.2',
-            borderColor: '#29b249',
-            '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
-          }}
-          size="small"
-          variant="text"
-          // disabled={pageNumber === 1 ? false : true}
-        >
-          Запись <br />
-          на сервис
         </Button>
       </Box>
     </Box>
