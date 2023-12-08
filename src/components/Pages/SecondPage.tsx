@@ -1,5 +1,5 @@
-import { forwardRef } from 'react';
-import { Box } from '@mui/material';
+import { forwardRef, useState } from 'react';
+import { Box, Modal, Button } from '@mui/material';
 import CustomForm from '../CustomForm/CustomForm';
 import Footer from '../Footer/Footer';
 import bg from '../../img/aston-martin.jpeg';
@@ -8,7 +8,9 @@ const SecondPage = forwardRef<HTMLElement>((_, ref) => {
   // const [open, setOpen] = useState(false);
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <section
       ref={ref}
@@ -31,7 +33,15 @@ const SecondPage = forwardRef<HTMLElement>((_, ref) => {
           top: 150,
         }}
       >
-        <CustomForm />
+        <Button onClick={handleOpen}>Open modal</Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <CustomForm />
+        </Modal>
       </Box>
       <Footer />
     </section>

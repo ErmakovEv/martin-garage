@@ -62,7 +62,12 @@ const CustomForm = () => {
       <Stack
         spacing={1}
         width={'100%'}
-        sx={{ display: 'flex', flexDirection: 'column', overflowY: 'auto' }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          overflowY: 'auto',
+          backgroundColor: 'white',
+        }}
       >
         <Box
           component="div"
