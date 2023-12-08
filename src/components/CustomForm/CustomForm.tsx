@@ -67,6 +67,8 @@ const CustomForm = () => {
           flexDirection: 'column',
           overflowY: 'auto',
           backgroundColor: 'white',
+          p: 2,
+          borderRadius: '5px',
         }}
       >
         <Box
