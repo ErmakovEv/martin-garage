@@ -1,8 +1,8 @@
-import { forwardRef } from "react";
-import { Box } from "@mui/material";
-// import CustomForm from '../Form/Form';
-import Footer from "../Footer/Footer";
-import bg from "../../img/aston-martin.jpeg";
+import { forwardRef } from 'react';
+import { Box } from '@mui/material';
+import CustomForm from '../CustomForm/CustomForm';
+import Footer from '../Footer/Footer';
+import bg from '../../img/aston-martin.jpeg';
 
 const SecondPage = forwardRef<HTMLElement>((_, ref) => {
   // const [open, setOpen] = useState(false);
@@ -14,24 +14,27 @@ const SecondPage = forwardRef<HTMLElement>((_, ref) => {
       ref={ref}
       style={{
         backgroundImage: `url(${bg}) `,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         // alignItems: 'center',
-      }}>
+      }}
+    >
       <Box
         component="div"
         sx={{
-          width: "100%",
-          color: "white",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}>
-        <Box component="div">
-          <h1>asd;lasdlaskdjasl</h1>
+          width: '100%',
+          height: '100%',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Box component="div" sx={{ display: 'flex', alignItems: 'end' }}>
+          <CustomForm />
         </Box>
       </Box>
       <Footer />
