@@ -26,16 +26,12 @@ const SecondPage = forwardRef<HTMLElement>((_, ref) => {
         component="div"
         sx={{
           width: '100%',
-          height: '100%',
           color: 'white',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          position: 'relative',
+          top: 150,
         }}
       >
-        <Box component="div" sx={{ display: 'flex', alignItems: 'end' }}>
-          <CustomForm />
-        </Box>
+        <CustomForm />
       </Box>
       <Footer />
     </section>
