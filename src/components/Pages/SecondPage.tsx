@@ -15,7 +15,10 @@ type SecondPageProps = {
 const SecondPage = forwardRef<HTMLElement, SecondPageProps>(
   ({ handleClickPage }: SecondPageProps, ref) => {
     const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
+    const handleOpen = () => {
+      handleClickPage();
+      setOpen(true);
+    };
     const handleClose = () => {
       console.log(handleClickPage);
       setOpen(false);
