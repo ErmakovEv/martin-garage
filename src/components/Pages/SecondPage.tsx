@@ -16,11 +16,9 @@ const SecondPage = forwardRef<HTMLElement, SecondPageProps>(
   ({ handleClickPage }: SecondPageProps, ref) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
-      handleClickPage();
       setOpen(true);
     };
     const handleClose = () => {
-      console.log(handleClickPage);
       setOpen(false);
     };
     return (
@@ -112,7 +110,7 @@ const SecondPage = forwardRef<HTMLElement, SecondPageProps>(
             </Box>
           </Modal>
         </Box>
-        <Footer />
+        {!open ? <Footer /> : null}
       </section>
     );
   }
