@@ -5,7 +5,12 @@ import { Box, TextField } from '@mui/material';
 const ThirdPage = forwardRef<HTMLElement>((_, ref) => (
   <section
     ref={ref}
-    style={{ display: 'flex', alignItems: 'center', marginTop: 150 }}
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      marginTop: 150,
+      backgroundColor: 'bisque',
+    }}
   >
     <Box
       component="div"
@@ -13,6 +18,7 @@ const ThirdPage = forwardRef<HTMLElement>((_, ref) => (
       justifyContent="center"
       alignItems="center"
       minHeight="100vh"
+      sx={{}}
     >
       <Box
         component="div"

@@ -1,19 +1,20 @@
-import { useRef } from "react";
-import { a } from "@react-spring/three";
-import Model from "../Model/Model";
-import { useFrame } from "@react-three/fiber";
-import * as THREE from "three";
-import CATEGORIESMAP from "../utils/utils";
+import { useRef } from 'react';
+import { a } from '@react-spring/three';
+import Model from '../Model/Model';
+import { useFrame } from '@react-three/fiber';
+import * as THREE from 'three';
+import CATEGORIESMAP from '../utils/utils';
+import { useAppSelector } from '../../hooks/reduxHooks';
 
-export default function Car({
-  active,
-}: {
-  active: keyof typeof CATEGORIESMAP;
-}) {
+export default function Car() {
+  const activeButton = useAppSelector(
+    (state) => state.activeButton.activeButton
+  );
+
   const myMesh = useRef<any>();
   const vek = new THREE.Vector3();
   useFrame((state) => {
-    switch (active) {
+    switch (activeButton) {
       case CATEGORIESMAP.engine.name:
         state.camera.position.lerp(vek.set(-3.5, 0.5, 0), 0.08);
         break;

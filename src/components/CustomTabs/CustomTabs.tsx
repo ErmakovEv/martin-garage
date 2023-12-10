@@ -1,11 +1,13 @@
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
 import React from 'react';
-import './CustomTabs.css';
-import { MyContext } from '../Pages/Pages';
+import { Tab, Tabs, Box } from '@mui/material';
+
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
+import { changeList } from '../../redux/slices/worksSlice';
+
 import CustomCheckbox from '../CustomCheckbox/CustomCheckbox';
+
 import CATEGORIESMAP from '../utils/utils';
+import './CustomTabs.css';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -57,7 +59,8 @@ type CustomTabsProps = {
 
 function CustomTabs({ bottonActive }: CustomTabsProps) {
   const [value, setValue] = React.useState(0);
-  const context = React.useContext(MyContext);
+  const workList = useAppSelector((state) => state.worksSlice.worksList);
+  const dispatch = useAppDispatch();
 
   const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -96,8 +99,8 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
             <CustomCheckbox
               key={item}
               value={item}
-              onChange={context?.cb}
-              checked={context?.list.has(item)}
+              onChange={() => dispatch(changeList(item))}
+              checked={workList.indexOf(item) !== -1}
             />
           </Box>
         ))}
@@ -108,8 +111,8 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
             <CustomCheckbox
               key={item}
               value={item}
-              onChange={context?.cb}
-              checked={context?.list.has(item)}
+              onChange={() => dispatch(changeList(item))}
+              checked={workList.indexOf(item) !== -1}
             />
           </Box>
         ))}

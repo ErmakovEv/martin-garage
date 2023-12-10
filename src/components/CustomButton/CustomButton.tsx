@@ -3,22 +3,20 @@ import './CustomButton.css';
 import CATEGORIESMAP from '../utils/utils';
 import { ICategoryObj } from '../utils/utils';
 import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
+import { useAppDispatch } from '../../hooks/reduxHooks';
+import { setButtonActive } from '../../redux/slices/activeButton';
 
 type CustomButtonProps = {
   k: keyof typeof CATEGORIESMAP;
   value: ICategoryObj;
-  handlerSetBottonActive: (newBottonActive: keyof typeof CATEGORIESMAP) => void;
 };
 
-const CustomButton = ({
-  k,
-  value,
-  handlerSetBottonActive,
-}: CustomButtonProps) => {
+const CustomButton = ({ k, value }: CustomButtonProps) => {
+  const dispatch = useAppDispatch();
   const [isActive, setIsActive] = useState<boolean>(false);
 
   const handleToggle = () => {
-    handlerSetBottonActive(k);
+    dispatch(setButtonActive(k));
     setIsActive((prevActive) => !prevActive);
   };
 
@@ -70,7 +68,7 @@ const CustomButton = ({
         open={isActive}
         closeDrawer={() => {
           setIsActive(false);
-          handlerSetBottonActive(CATEGORIESMAP.none.name);
+          dispatch(setButtonActive(CATEGORIESMAP.none.name));
         }}
       />
     </>

@@ -1,14 +1,14 @@
 import { Button } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
-type ToggleButtonProps = {
-  handleClickPage: () => void;
-  title: React.ReactNode;
-};
+// type ToggleButtonProps = {
+//   // handleClickPage: () => void;
+//   // title: React.ReactNode;
+// };
 
-function ToggleButton({ handleClickPage, title }: ToggleButtonProps) {
+function ToggleButton() {
   return (
     <Button
-      onClick={handleClickPage}
       sx={{
         color: 'white',
         fontSize: '1.2vh',
@@ -20,8 +20,10 @@ function ToggleButton({ handleClickPage, title }: ToggleButtonProps) {
       size="small"
       variant="text"
     >
-      <div></div>
-      {title}
+      <NavLink to="/form">
+        <div></div>
+        {'TEST'}
+      </NavLink>
     </Button>
   );
 }
