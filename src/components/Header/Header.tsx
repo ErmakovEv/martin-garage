@@ -22,7 +22,7 @@ const Header = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backdropFilter: 'blur(10px)',
+        backgroundColor: 'black',
       }}
     >
       <Box

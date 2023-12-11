@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { Suspense, lazy } from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
 import {
   Route,
@@ -9,8 +9,7 @@ import {
 import RootLayout from './components/RootLayout/RootLayout';
 import SpinnerMask from './components/SpinnerMask/SpinnerMask';
 import ErrorPage from './components/ErrorPage/ErrorPage';
-import ThirdPage from './components/Pages/ThirdPage';
-import Spinner from './components/Spinner/Spinner';
+import FormPage from './components/Pages/FormPage';
 const LazyMain = lazy(() => import('./components/Main/Main'));
 
 const theme = createTheme({
@@ -25,11 +24,6 @@ const theme = createTheme({
 });
 
 function App() {
-  const [loadSpinner, setLoadSpinner] = useState<boolean>(false);
-  useEffect(() => {
-    setTimeout(() => setLoadSpinner(true), 3000);
-  }, []);
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />} errorElement={<ErrorPage />}>
@@ -47,7 +41,7 @@ function App() {
             )
           }
         /> */}
-        <Route path="/form" element={<ThirdPage />} />
+        <Route path="/form" element={<FormPage />} />
         {/* <Route
           path="/login"
           element={
