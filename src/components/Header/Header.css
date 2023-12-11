@@ -1,0 +1,48 @@
+.logo-container {
+  /* position: absolute; */
+  margin-left: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.logo {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  /* background-color: red; */
+  color: #fff;
+  /* padding: 10px 20px; */
+  border-radius: 5px;
+  scale: 1.1;
+}
+
+.logo::before {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 30%;
+  top: 0.5em;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: translateX(-6em) skewX(-45deg);
+}
+
+.logo:hover::before {
+  animation: move-light 0.3s;
+}
+
+@keyframes move-light {
+  0% {
+    transform: translateX(1em) skewX(45deg) scale(0.2);
+  }
+  50% {
+    transform: translateX(3em) skewX(45deg) scale(1);
+  }
+  100% {
+    transform: translateX(5em) skewX(45deg) scale(0.3);
+  }
+}
+
+.logo-img {
+  width: 10em;
+}

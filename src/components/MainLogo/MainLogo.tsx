@@ -6,7 +6,9 @@ function MainLogo() {
   return (
     <>
       <Box component={'div'} className="logo-container">
-        <img src={logo} alt="logo1" className="logo-img" />
+        <div className="logo">
+          <img src={logo} alt="logo1" className="logo-img" />
+        </div>
       </Box>
       <Box
         component={'div'}

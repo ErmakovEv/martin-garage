@@ -6,6 +6,8 @@ import MainLogo from '../MainLogo/MainLogo';
 import ToggleButton from '../ToggleButton/ToggleButton';
 import { useAppDispatch } from '../../hooks/reduxHooks';
 import { toggleDrawer } from '../../redux/slices/swipeableEdgeDrawerSlice';
+import '../MainLogo/MainLogo.css';
+import './Header.css';
 
 const Header = () => {
   const dispatch = useAppDispatch();
