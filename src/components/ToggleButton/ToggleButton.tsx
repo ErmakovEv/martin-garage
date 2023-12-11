@@ -1,5 +1,6 @@
 import { Button } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import './ToggleButton.css';
 
 // type ToggleButtonProps = {
 //   // handleClickPage: () => void;
@@ -9,20 +10,21 @@ import { NavLink } from 'react-router-dom';
 function ToggleButton() {
   return (
     <Button
-      sx={{
-        color: 'white',
-        fontSize: '1.2vh',
-        lineHeight: '1.2',
-        borderColor: '#29b249',
-        fontFamily: ['Oswald'],
-        '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
-      }}
+      // sx={{
+      //   color: 'white',
+      //   fontSize: '16px',
+      //   lineHeight: '1.2',
+      //   borderColor: '#29b249',
+      //   fontFamily: ['Oswald'],
+      //   '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
+      //   '.active': { color: 'white' },
+      // }}
       size="small"
       variant="text"
     >
-      <NavLink to="/form">
-        <div></div>
-        {'TEST'}
+      <NavLink className="navlink" to="/form">
+        Запись <br />
+        на сервис
       </NavLink>
     </Button>
   );

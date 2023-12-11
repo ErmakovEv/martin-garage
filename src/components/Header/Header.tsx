@@ -22,7 +22,7 @@ const Header = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: 'black',
+        backgroundColor: '#141414',
       }}
     >
       <Box
@@ -48,16 +48,24 @@ const Header = () => {
 
         <Box component={'div'}>
           <Button
-            sx={{
-              color: 'white',
-              fontSize: '1.2vh',
-              lineHeight: '1.2',
-              borderColor: '#29b249',
-              '&:hover': { backgroundColor: '#29b249', borderColor: 'white' },
-            }}
+            className="change-button"
             size="small"
             variant="text"
             onClick={() => dispatch(toggleDrawer())}
+            sx={{
+              textDecoration: 'double',
+              color: '#b2b2b2',
+              fontSize: '16px',
+              lineHeight: 1.2,
+              borderColor: '#b2b2b2',
+              fontFamily: ['Oswald'],
+              '&:hover': {
+                backgroundColor: '#29b249',
+                borderRadius: '2px',
+                color: 'white',
+                borderColor: '#b2b2b2',
+              },
+            }}
           >
             Выбор <br /> ремонта
           </Button>
