@@ -27,10 +27,10 @@ const MainPage = () => (
         <Box
           component="div"
           sx={{
-            height: `calc(22% - 36px)`,
+            height: `150px`,
             zIndex: 100,
             position: 'fixed',
-            bottom: 0,
+            top: '80%',
             right: 0,
           }}
         >

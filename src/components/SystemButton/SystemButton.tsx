@@ -1,9 +1,9 @@
-import { useState } from "react";
-import CATEGORIESMAP from "../utils/utils";
-import { ICategoryObj } from "../utils/utils";
-import TemporaryDrawer from "../TemporaryDrawer/TemporaryDrawer";
-import { useAppDispatch } from "../../hooks/reduxHooks";
-import { setButtonActive } from "../../redux/slices/activeButton";
+import { useState } from 'react';
+import CATEGORIESMAP from '../utils/utils';
+import { ICategoryObj } from '../utils/utils';
+import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
+import { useAppDispatch } from '../../hooks/reduxHooks';
+import { setButtonActive } from '../../redux/slices/activeButton';
 
 type SystemButtonProps = {
   k: keyof typeof CATEGORIESMAP;
@@ -19,16 +19,26 @@ function SystemButton({ k, value }: SystemButtonProps) {
     setIsActive((prevActive) => !prevActive);
   };
   return (
-    <>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        // justifyContent: 'center',
+      }}
+    >
       <div className="label" key={k} onClick={() => handleToggle()}>
         {value.img && (
           <value.img
             fill="black"
             width="48"
-            className={isActive ? "image-checked" : "image"}
+            className={isActive ? 'image-checked' : 'image'}
           />
         )}
-        <span className={isActive ? "span-checked" : "span"}></span>
+        <span className={isActive ? 'span-checked' : 'span'}></span>
+      </div>
+      <div className={isActive ? 'text-label-active' : 'text-label'}>
+        {value.title}
       </div>
       <TemporaryDrawer
         bottonActive={k}
@@ -38,7 +48,7 @@ function SystemButton({ k, value }: SystemButtonProps) {
           dispatch(setButtonActive(CATEGORIESMAP.none.name));
         }}
       />
-    </>
+    </div>
   );
 }
 

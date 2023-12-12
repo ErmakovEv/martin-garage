@@ -1,21 +1,19 @@
-import { useState } from 'react';
 import './CustomButton.css';
-// import CATEGORIESMAP from '../utils/utils';
-// import { ICategoryObj } from '../utils/utils';
-// import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
-// import { useAppDispatch } from '../../hooks/reduxHooks';
-// import { setButtonActive } from '../../redux/slices/activeButton';
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
+import { toggleDrawer } from '../../redux/slices/swipeableEdgeDrawerSlice';
 
 const CustomButton = () => {
-  // const dispatch = useAppDispatch();
-  const [isActive, setIsActive] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+
+  const isOpen = useAppSelector(
+    (state) => state.swipeableEdgeDrawerSlice.isOpen
+  );
 
   const handleToggle = () => {
-    // dispatch(setButtonActive(k));
-    setIsActive((prevActive) => !prevActive);
+    dispatch(toggleDrawer());
   };
 
-  const engineClass: string = isActive ? 'engine active' : 'engine';
+  const engineClass: string = isOpen ? 'engine active' : 'engine';
 
   return (
     <div className="custom-button-wrapper">
@@ -32,23 +30,24 @@ const CustomButton = () => {
                       onClick={() => handleToggle()}
                     >
                       <div className="light"></div>
-                      <span className={isActive ? 'circle-active' : 'circle'}>
-                        start-stop
+                      <span
+                        className={isOpen ? 'circle-active' : 'circle'}
+                        style={{ fontSize: '1.4vh' }}
+                      >
+                        <span
+                          style={{
+                            fontFamily: 'sans-serif',
+                            fontSize: '1vh',
+                            marginBottom: '0.8vh',
+                          }}
+                        >
+                          Engine
+                        </span>
                         <br />
-                      </span>
-                      <span>
-                        {/* {value
-                          ? value.img && (
-                              <value.img
-                                width="4vh"
-                                className={
-                                  isActive
-                                    ? 'image-system-active'
-                                    : 'image-system'
-                                }
-                              />
-                            )
-                          : null} */}
+                        Start
+                        <br />
+                        Stop
+                        <br />
                       </span>
                     </button>
                   </div>

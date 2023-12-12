@@ -69,7 +69,9 @@ const Header = () => {
               },
             }}
           >
-            Выбор <br /> ремонта
+            <NavLink className="navlink" to="/about">
+              О нас
+            </NavLink>
           </Button>
         </Box>
       </Box>

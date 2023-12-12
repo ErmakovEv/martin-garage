@@ -10,6 +10,7 @@ import RootLayout from './components/RootLayout/RootLayout';
 import SpinnerMask from './components/SpinnerMask/SpinnerMask';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import FormPage from './components/Pages/FormPage';
+import AboutPage from './components/Pages/AboutPage';
 const LazyMain = lazy(() => import('./components/Main/Main'));
 
 const theme = createTheme({
@@ -28,6 +29,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />} errorElement={<ErrorPage />}>
         <Route path="/" element={<LazyMain />} />
+        <Route path="/about" element={<AboutPage />} />
         {/* <Route
           path="/dashboard"
           element={

@@ -34,7 +34,7 @@ type CategoriesMap = {
 const CATEGORIESMAP: CategoriesMap = {
   engine: {
     name: CATEGORIES.engine,
-    title: 'Бензиновый или дизельный двигатель',
+    title: 'ДВИЖОК',
     img: EngineImg,
     repair: ['Капитальный ремонт', 'Устранение течи моторного масла'],
     service: [
@@ -46,14 +46,14 @@ const CATEGORIESMAP: CategoriesMap = {
   },
   transmission: {
     name: CATEGORIES.transmission,
-    title: 'Механическая или автоматическая коробка передач',
+    title: 'КОРОБКА',
     img: TransmissionImg,
     repair: ['Ремонт КПП', 'Устранение течи трансмисионного масла'],
     service: ['Замена трансмисионного масла'],
   },
   suspension: {
     name: CATEGORIES.suspension,
-    title: 'Подвескаи рулевое управление',
+    title: 'ПОДВЕСКА',
     img: SuspensionImg,
     repair: [
       'Ремонт рулевой рейки',
@@ -68,21 +68,21 @@ const CATEGORIESMAP: CategoriesMap = {
   },
   electric: {
     name: CATEGORIES.electric,
-    title: 'Электрооборудование автомобиля',
+    title: 'ЭЛЕКТРИКА',
     img: ElctricImg,
     repair: ['Замена элементов освещения', 'Ремонт стартера'],
     service: ['Диагностика электрооборудования'],
   },
   brakes: {
     name: CATEGORIES.brakes,
-    title: 'Дисковые или барабанные тормоза',
+    title: 'ТОРМОЗА',
     img: BrakesImg,
     repair: ['Замена дисков (барабанов)', 'Замена тормозных колодок'],
     service: ['Замена тормозной жидкости', 'Обслуживание тормозных механизмов'],
   },
   tires: {
     name: CATEGORIES.tires,
-    title: 'Шиномонтаж',
+    title: 'ШИНКА',
     img: TiresImg,
     repair: ['Устранение проколов, порезов'],
     service: [
@@ -93,7 +93,7 @@ const CATEGORIESMAP: CategoriesMap = {
   },
   optional: {
     name: CATEGORIES.optional,
-    title: 'Дополнительное оборудование',
+    title: 'ДОПЫ',
     img: OptionalImg,
     repair: [
       'Ремонт системы кондиционирования',

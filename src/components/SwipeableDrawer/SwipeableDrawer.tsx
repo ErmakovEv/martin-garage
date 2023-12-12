@@ -53,7 +53,16 @@ export default function SwipeableEdgeDrawer() {
             backgroundColor: '#333',
           }}
         >
-          <Box component="div" sx={{ width: '100%' }}>
+          <Box
+            component="div"
+            sx={{
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              mt: 2,
+            }}
+          >
             <ButtonsGroup />
           </Box>
         </StyledBox>
