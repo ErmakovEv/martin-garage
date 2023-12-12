@@ -1,26 +1,12 @@
-import { useState } from 'react';
-import './CustomButton.css';
-import CATEGORIESMAP from '../utils/utils';
-import { ICategoryObj } from '../utils/utils';
-import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
-import { useAppDispatch } from '../../hooks/reduxHooks';
-import { setButtonActive } from '../../redux/slices/activeButton';
+import { useState } from "react";
+import { useAppDispatch } from "../../hooks/reduxHooks";
+import { setButtonActive } from "../../redux/slices/activeButton";
 
-type CustomButtonProps = {
-  k: keyof typeof CATEGORIESMAP;
-  value: ICategoryObj;
-};
-
-const CustomButton = ({ k, value }: CustomButtonProps) => {
+const CustomButton = () => {
   const dispatch = useAppDispatch();
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const handleToggle = () => {
-    dispatch(setButtonActive(k));
-    setIsActive((prevActive) => !prevActive);
-  };
-
-  const engineClass: string = isActive ? 'engine active' : 'engine';
+  const engineClass: string = isActive ? "engine active" : "engine";
 
   return (
     <>
@@ -32,28 +18,25 @@ const CustomButton = ({ k, value }: CustomButtonProps) => {
               <div className="inner-black">
                 <div className="inner-black-2">
                   <div className="inner-black-3">
-                    <button
-                      className={engineClass}
-                      onClick={() => handleToggle()}
-                    >
+                    <button className={engineClass} onClick={() => {}}>
                       <div className="light"></div>
-                      <span className={isActive ? 'span-active' : 'span'}>
-                        {k}
+                      <span className={isActive ? "span-active" : "span"}>
+                        start
                         <br />
                       </span>
                       <span>
-                        {value
+                        {/* {value
                           ? value.img && (
                               <value.img
                                 width="4vh"
                                 className={
                                   isActive
-                                    ? 'image-system-active'
-                                    : 'image-system'
+                                    ? "image-system-active"
+                                    : "image-system"
                                 }
                               />
                             )
-                          : null}
+                          : null} */}
                       </span>
                     </button>
                   </div>
@@ -63,14 +46,6 @@ const CustomButton = ({ k, value }: CustomButtonProps) => {
           </div>
         </div>
       </div>
-      <TemporaryDrawer
-        bottonActive={k}
-        open={isActive}
-        closeDrawer={() => {
-          setIsActive(false);
-          dispatch(setButtonActive(CATEGORIESMAP.none.name));
-        }}
-      />
     </>
   );
 };

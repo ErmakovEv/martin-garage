@@ -1,10 +1,10 @@
-import { useRef } from 'react';
-import { a } from '@react-spring/three';
-import Model from '../Model/Model';
-import { useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
-import CATEGORIESMAP from '../utils/utils';
-import { useAppSelector } from '../../hooks/reduxHooks';
+import { useRef } from "react";
+import { a } from "@react-spring/three";
+import Model from "../Model/Model";
+import { useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+import CATEGORIESMAP from "../utils/utils";
+import { useAppSelector } from "../../hooks/reduxHooks";
 
 export default function Car() {
   const activeButton = useAppSelector(

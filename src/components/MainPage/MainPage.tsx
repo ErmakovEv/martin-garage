@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unknown-property */
-import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import Car from '../Car/Car';
-import { OrbitControls, Stage } from '@react-three/drei';
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import Car from "../Car/Car";
+import { OrbitControls, Stage } from "@react-three/drei";
 
 const MainPage = () => (
   <section>
