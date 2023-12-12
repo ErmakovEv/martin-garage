@@ -1,10 +1,8 @@
-import React, { useRef } from "react";
-import { Box, TextField, Stack, Button } from "@mui/material";
-import { useAppSelector } from "../../hooks/reduxHooks";
-import CustomAutocomplite from "../CustomAutocomplite/CustomAutocomplite";
-import emailjs from "@emailjs/browser";
-import ButtonsGroup from "../ButtonsGroup/ButtonsGroup";
-import CustomButton from "../CustomButton/CustomButton";
+import React, { useRef } from 'react';
+import { Box, TextField, Stack, Button } from '@mui/material';
+import { useAppSelector } from '../../hooks/reduxHooks';
+import CustomAutocomplite from '../CustomAutocomplite/CustomAutocomplite';
+import emailjs from '@emailjs/browser';
 
 const FormPage = () => {
   const worksList = useAppSelector((state) => state.worksSlice.worksList);
@@ -12,27 +10,27 @@ const FormPage = () => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
-    const works = worksList.join(", ");
+    const works = worksList.join(', ');
     const myFormData = new FormData(form.current as HTMLFormElement);
     e.preventDefault();
     emailjs
       .send(
-        "service_tcd5wud",
-        "template_xet8ugu",
+        'service_tcd5wud',
+        'template_xet8ugu',
         {
-          user_name: myFormData.get("user_name"),
-          user_email: myFormData.get("user_email"),
-          user_phone: myFormData.get("user_phone"),
-          user_car: myFormData.get("user_car"),
-          user_year_car: myFormData.get("user_year_car"),
+          user_name: myFormData.get('user_name'),
+          user_email: myFormData.get('user_email'),
+          user_phone: myFormData.get('user_phone'),
+          user_car: myFormData.get('user_car'),
+          user_year_car: myFormData.get('user_year_car'),
           user_works: works,
         },
-        "4KwUVKA1wUPRuy_no"
+        '4KwUVKA1wUPRuy_no'
       )
       .then(
         (result) => {
           console.log(result.text);
-          console.log("message send!!!");
+          console.log('message send!!!');
         },
         (error) => {
           console.log(error.text);
@@ -44,21 +42,17 @@ const FormPage = () => {
     <Box
       component="div"
       sx={{
-        width: "100%",
-        color: "white",
-        position: "relative",
-        display: "flex",
-        justifyContent: "center",
+        width: '100%',
+        color: 'white',
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
         top: 150,
-        height: "40vh",
-      }}>
-      <Box
-        component="div"
-        sx={{ position: "fixed", bottom: 0, width: "200px", height: "200px" }}
-        className="button-container">
-        <CustomButton />
-      </Box>
-      {/* <form ref={form} onSubmit={sendEmail}>
+        height: '40vh',
+      }}
+    >
+      {/* <CustomButtonsGroup /> */}
+      <form ref={form} onSubmit={sendEmail}>
         <Stack
           spacing={1}
           width={'100%'}
@@ -213,7 +207,7 @@ const FormPage = () => {
             </Box>
           </Box>
         </Stack>
-      </form> */}
+      </form>
     </Box>
   );
 };

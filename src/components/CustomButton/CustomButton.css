@@ -1,19 +1,16 @@
-.button-container {
-  /* height: 100%; */
+.custom-button-wrapper {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+  opacity: 1;
 }
 
 .button-group-body {
   /* perspective: 200px; */
-  width: 150px;
-  position: fixed;
-  top: 110px;
-  background-color: #1b1b1b;
+  /* background-color: #1b1b1b; */
   perspective-origin: center;
   display: inline-block;
 
@@ -25,7 +22,7 @@
   /* transform: rotateX(15deg) translateY(-110px); */
   /* transform-style: preserve-3d; */
   /* text-align: start; */
-  position: relative;
+  /* position: relative; */
   /* height: 100%; */
   /* display: flex; */
   /* align-items: start; */
@@ -36,7 +33,6 @@
   /* transition: transform 1s; */
 }
 div.outer-black {
-  position: absolute;
   background-color: rgba(2, 2, 2, 0.85);
   /* margin-top: 200px; */
   border-radius: 50%;
@@ -162,7 +158,8 @@ button.engine:active {
     0 0 1.6vh 0.3vh #c77713,
     0 0 5vh #fff;
 }
-button.engine .span {
+
+.circle {
   font-family: sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -172,7 +169,7 @@ button.engine .span {
   padding: 0;
 }
 
-.span-active {
+.circle-active {
   font-family: sans-serif;
   text-transform: uppercase;
   font-weight: bold;

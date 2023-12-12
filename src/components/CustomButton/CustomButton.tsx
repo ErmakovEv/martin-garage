@@ -1,15 +1,24 @@
-import { useState } from "react";
-import { useAppDispatch } from "../../hooks/reduxHooks";
-import { setButtonActive } from "../../redux/slices/activeButton";
+import { useState } from 'react';
+import './CustomButton.css';
+// import CATEGORIESMAP from '../utils/utils';
+// import { ICategoryObj } from '../utils/utils';
+// import TemporaryDrawer from '../TemporaryDrawer/TemporaryDrawer';
+// import { useAppDispatch } from '../../hooks/reduxHooks';
+// import { setButtonActive } from '../../redux/slices/activeButton';
 
 const CustomButton = () => {
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const engineClass: string = isActive ? "engine active" : "engine";
+  const handleToggle = () => {
+    // dispatch(setButtonActive(k));
+    setIsActive((prevActive) => !prevActive);
+  };
+
+  const engineClass: string = isActive ? 'engine active' : 'engine';
 
   return (
-    <>
+    <div className="custom-button-wrapper">
       <div className="button-group-body">
         <div id="wrapper">
           <div className="outer-black">
@@ -18,10 +27,13 @@ const CustomButton = () => {
               <div className="inner-black">
                 <div className="inner-black-2">
                   <div className="inner-black-3">
-                    <button className={engineClass} onClick={() => {}}>
+                    <button
+                      className={engineClass}
+                      onClick={() => handleToggle()}
+                    >
                       <div className="light"></div>
-                      <span className={isActive ? "span-active" : "span"}>
-                        start
+                      <span className={isActive ? 'circle-active' : 'circle'}>
+                        start-stop
                         <br />
                       </span>
                       <span>
@@ -31,8 +43,8 @@ const CustomButton = () => {
                                 width="4vh"
                                 className={
                                   isActive
-                                    ? "image-system-active"
-                                    : "image-system"
+                                    ? 'image-system-active'
+                                    : 'image-system'
                                 }
                               />
                             )
@@ -46,7 +58,7 @@ const CustomButton = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
