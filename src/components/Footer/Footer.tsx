@@ -17,9 +17,9 @@ function Footer() {
         height: '30vh',
         display: 'flex',
         justifyContent: 'space-between',
-        position: 'relative',
-        m: 0,
-        p: 0,
+        position: 'fixed',
+        bottom: 0,
+        overflow: 'hidden',
       }}
     >
       <Box
