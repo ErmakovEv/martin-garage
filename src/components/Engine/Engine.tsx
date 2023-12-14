@@ -20,7 +20,7 @@ export default function Engine() {
       ref={myMesh}
       // rotation={[0, -0.5, 0.5]}
       // position={[-8, -2, 0]}
-      // scale={0.5}
+      scale={2}
     >
       <ModelEngine />
     </mesh>

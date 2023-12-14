@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { Box, Modal, Button } from '@mui/material';
-import CustomForm from '../CustomAutocomplite/CustomAutocomplite';
+import { Box } from '@mui/material';
+// import CustomForm from '../CustomAutocomplite/CustomAutocomplite';
 import Footer from '../Footer/Footer';
 // import bg from '../../img/aston-martin.jpeg';
 
@@ -8,19 +7,7 @@ import { Canvas } from '@react-three/fiber';
 import Engine from '../Engine/Engine';
 import { OrbitControls, Stage } from '@react-three/drei';
 
-// type AboutPageProps = {
-//   handleClickPage: () => void;
-// };
-
 const AboutPage = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    // console.log(handleClickPage);
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <section
       // ref={ref}
@@ -32,55 +19,24 @@ const AboutPage = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
+        height: '100vh',
       }}
     >
       <Box
         component="div"
         sx={{
-          width: '100%',
-          color: 'white',
-          position: 'relative',
+          borderRadius: '2px solid white',
+          height: '100%',
           display: 'flex',
-          justifyContent: 'space-between',
-          top: 150,
-          height: '40vh',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <Box component="div">
-          <Button onClick={handleOpen}>Open modal</Button>
-        </Box>
-        <Box
-          component="div"
-          sx={{
-            // backgroundColor: 'red',
-            borderRadius: '2px solid white',
-            width: '50%',
-          }}
-        >
           <Canvas>
-            {/* <cubeTexture /> */}
-            {/* <color attach="background" args={['#0b180c']} /> */}
-            {/* <fog attach="fog" args={['#0b180c', 10, 20]} /> */}
-            <Stage environment="city" intensity={0.1}>
+            <Stage environment="city" intensity={0.1} scale={10}>
               <Engine />
             </Stage>
-            {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position-y={-0.5}>
-              <planeGeometry args={[170, 170]} />
-              <MeshReflectorMaterial
-                blur={[1, 1]}
-                resolution={1080}
-                // mixBlur={0.8}
-                // mixStrength={10}
-                roughness={1}
-                depthScale={1.2}
-                minDepthThreshold={1.4}
-                maxDepthThreshold={5.4}
-                color="grey"
-                metalness={1}
-                mirror={1}
-              />
-              <meshStandardMaterial color="#000" />
-            </mesh> */}
             <OrbitControls
               enableZoom={false}
               enablePan={true}
@@ -92,25 +48,9 @@ const AboutPage = () => {
             />
           </Canvas>
         </Box>
-
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box
-            component={'div'}
-            sx={{
-              maxWidth: '350px',
-              m: '0 auto',
-            }}
-          >
-            <CustomForm />
-          </Box>
-        </Modal>
       </Box>
-      {!open ? <Footer /> : null}
+
+      <Footer />
     </section>
   );
 };

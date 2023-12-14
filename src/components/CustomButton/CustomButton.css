@@ -9,7 +9,7 @@
 }
 
 .button-group-body {
-  perspective: 300px;
+  /* perspective: 300px; */
   /* background-color: #1b1b1b; */
   perspective-origin: center;
   display: inline-block;

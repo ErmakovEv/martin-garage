@@ -1,15 +1,15 @@
 .drawer-container {
   width: 90%;
-  background-color: black;
+  background-color: #333;
   scroll-snap-type: x mandatory;
   padding: 0;
   margin: 8px;
-  color: white;
+  color: #c5dea1;
 }
 
 .drawer-section {
   /* scroll-snap-align: start; */
-  color: white;
+  color: #c5dea1;
 }
 
 ::-webkit-scrollbar {

@@ -8,14 +8,14 @@
 }
 
 .navlink:hover {
-  background-color: #29b249;
+  background-color: #c5dea1;
   padding: 2px 4px;
   border-radius: 2px;
-  color: white;
+  color: #333;
   border-color: #b2b2b2;
 }
 
 .active {
-  color: #29b249;
+  color: #c5dea1;
   text-decoration: none;
 }

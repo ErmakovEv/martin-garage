@@ -1,3 +1,7 @@
+.header {
+  position: relative;
+}
+
 .logo-container {
   /* position: absolute; */
   margin-left: 1em;

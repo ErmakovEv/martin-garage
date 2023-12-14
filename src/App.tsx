@@ -16,7 +16,7 @@ const LazyMain = lazy(() => import('./components/Main/Main'));
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#29b249',
+      main: '#c5dea1',
     },
   },
   typography: {

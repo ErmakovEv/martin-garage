@@ -4,7 +4,7 @@
   --background-image: #fff, #006baf33;
   --text-color: #666;
   --text-headline: #000;
-  --card-shadow: #29b249;
+  --card-shadow: #c5dea1;
   /* --card-height: ; */
   --card-width: 10vmax;
   --card-radius: 12px;
@@ -128,7 +128,7 @@
 }
 
 .card__body-cover-checkbox {
-  background: #29b249;
+  background: #a9db63;
   border: 2px solid var(--check-border, #fff);
   position: absolute;
   right: 10px;

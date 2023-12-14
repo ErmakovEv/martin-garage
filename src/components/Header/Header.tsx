@@ -13,8 +13,8 @@ const Header = () => {
   const dispatch = useAppDispatch();
   return (
     <div
+      className="header"
       style={{
-        // backgroundColor: '#1b1b1b',
         position: 'fixed',
         top: 0,
         zIndex: 100,
@@ -24,7 +24,7 @@ const Header = () => {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#141414',
+        backgroundColor: '#333',
       }}
     >
       <Box
@@ -61,12 +61,6 @@ const Header = () => {
               lineHeight: 1.2,
               borderColor: '#b2b2b2',
               fontFamily: ['Oswald'],
-              '&:hover': {
-                backgroundColor: '#29b249',
-                borderRadius: '2px',
-                color: 'white',
-                borderColor: '#b2b2b2',
-              },
             }}
           >
             <NavLink className="navlink" to="/about">

@@ -37,11 +37,14 @@ export default function SwipeableEdgeDrawer() {
         onOpen={() => dispatch(toggleDrawer())}
         swipeAreaWidth={drawerBleeding}
         disableSwipeToOpen={false}
-        sx={{ position: 'fixed' }}
+        // sx={{ position: 'fixed' }}
         slotProps={{
           backdrop: {
             invisible: true,
           },
+        }}
+        ModalProps={{
+          keepMounted: true,
         }}
       >
         <StyledBox
