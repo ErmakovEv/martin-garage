@@ -15,11 +15,13 @@ const AboutPage = () => {
         // backgroundImage: `url(${bg}) `,
         // backgroundSize: 'cover',
         // backgroundPosition: 'center',
-        backgroundColor: 'black',
+        backgroundColor: 'red',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100vh',
+        // marginBottom: '200px',
+        overflowY: 'hidden',
       }}
     >
       <Box

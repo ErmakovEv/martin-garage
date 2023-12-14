@@ -11,18 +11,28 @@ function Footer() {
       className="footer"
       component="div"
       sx={{
-        backgroundColor: 'blue',
-        height: '200px',
+        zIndex: 10,
+        // backgroundColor: 'black',
+        width: '100%',
+        height: '30vh',
+        display: 'flex',
+        justifyContent: 'space-between',
+        position: 'relative',
+        m: 0,
+        p: 0,
       }}
     >
       <Box
         component="div"
         sx={{
           position: 'absolute',
-          zIndex: '10',
+          zIndex: 100,
           width: '30%',
-          height: '200px',
+          height: '100%',
           display: 'flex',
+          m: 0,
+          p: 0,
+          // background: 'green',
         }}
       >
         <Box component="div" sx={{ width: '25%', opacity: 1 }}></Box>
@@ -129,10 +139,15 @@ function Footer() {
           </Stack>
         </Box>
       </Box>
-      <CustomMap />
+      <Box component="div" sx={{ width: '100%' }}>
+        <CustomMap />
+      </Box>
+
       <Box
         component="div"
         sx={{
+          m: 0,
+          p: 0,
           backgroundColor: 'red',
           position: 'absolute',
           bottom: '0',
