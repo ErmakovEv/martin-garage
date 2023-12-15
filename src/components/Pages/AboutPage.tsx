@@ -28,7 +28,7 @@ const AboutPage = () => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         height: '100vh',
-        overflowY: 'hidden',
+        overflow: 'hidden',
       }}
     >
       <Box
@@ -36,18 +36,36 @@ const AboutPage = () => {
         width="100%"
         sx={{
           display: 'flex',
-          justifyContent: 'center',
-          // alignItems: 'center',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          height: '100vh',
+          border: '3px solid white',
+          mt: '7em',
         }}
       >
         <Box
           component="div"
           sx={{
             borderRadius: '2px solid white',
-            height: '100%',
+            marginTop: '0 auto',
+            border: '3px solid red',
+            // float: 'left',
+            height: '50%',
           }}
         >
-          <img className="earth" src={gif} alt="Earth" width={'350px'} />
+          <img className="earth" src={gif} alt="Earth" width={'150vw'} />
+        </Box>
+        <Box
+          component="div"
+          sx={{
+            borderRadius: '2px solid white',
+            marginTop: '0 auto',
+            border: '3px solid green',
+            height: '50%',
+            color: 'white',
+          }}
+        >
+          123
         </Box>
       </Box>
 
