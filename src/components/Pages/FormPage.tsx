@@ -55,7 +55,7 @@ const FormPage = () => {
       <form ref={form} onSubmit={sendEmail}>
         <Stack
           spacing={1}
-          width={'100%'}
+          width={'350px'}
           sx={{
             display: 'flex',
             flexDirection: 'column',
