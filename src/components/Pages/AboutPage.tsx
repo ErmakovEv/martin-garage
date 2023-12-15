@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 // import CustomForm from '../CustomAutocomplite/CustomAutocomplite';
 import Footer from '../Footer/Footer';
 // import bg from '../../img/aston-martin.jpeg';
@@ -29,7 +29,7 @@ const AboutPage = () => {
           justifyContent: 'space-around',
           alignItems: 'center',
           height: '100vh',
-          border: '3px solid white',
+          // border: '3px solid white',
           // mt: '10em',
         }}
       >
