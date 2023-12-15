@@ -2,11 +2,12 @@ import { Box } from '@mui/material';
 // import CustomForm from '../CustomAutocomplite/CustomAutocomplite';
 import Footer from '../Footer/Footer';
 // import bg from '../../img/aston-martin.jpeg';
-import ModelEngine from '../ModelEngine/ModelEngine';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import Engine from '../Engine/Engine';
-import { OrbitControls, Stage } from '@react-three/drei';
-import { useRef } from 'react';
+// import ModelEngine from '../ModelEngine/ModelEngine';
+// import { Canvas, useFrame, useThree } from '@react-three/fiber';
+// import Engine from '../Engine/Engine';
+// import { OrbitControls, Stage } from '@react-three/drei';
+// import { useRef } from 'react';
+import CustomStepper from '../CustomStepper/CustomStepper';
 import gif from '/v8.gif';
 
 const AboutPage = () => {
@@ -65,7 +66,7 @@ const AboutPage = () => {
             color: 'white',
           }}
         >
-          123
+          <CustomStepper />
         </Box>
       </Box>
 
