@@ -6,6 +6,13 @@ import ElctricImg from '../../img/car-battery-icon.svg?react';
 import TiresImg from '../../img/wheel-icon.svg?react';
 import OptionalImg from '../../img/fan-blades-icon.svg?react';
 
+import engineImg from '../../img/checkboxImg/1.jpeg';
+import engine2Img from '../../img/checkboxImg/1006.jpeg';
+import candle from '../../img/checkboxImg/6450568339.jpeg';
+import wire from '../../img/checkboxImg/provoda.jpeg';
+import oil from '../../img/checkboxImg/maslo.webp';
+import airFilter from '../../img/checkboxImg/344853.webp';
+
 export const CATEGORIES = {
   engine: 'engine' as const,
   transmission: 'transmission' as const,
@@ -17,12 +24,17 @@ export const CATEGORIES = {
   none: 'none' as const,
 };
 
+type worksType = {
+  title: string;
+  img: string;
+};
+
 export interface ICategoryObj {
   name: keyof typeof CATEGORIES;
   title?: string;
   img?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  repair?: string[];
-  service?: string[];
+  repair?: Array<worksType>;
+  service?: Array<worksType>;
 }
 
 type CategoriesKeys = keyof typeof CATEGORIES;
@@ -36,59 +48,77 @@ const CATEGORIESMAP: CategoriesMap = {
     name: CATEGORIES.engine,
     title: 'ДВИЖОК',
     img: EngineImg,
-    repair: ['Капитальный ремонт', 'Устранение течи моторного масла'],
+    repair: [
+      { title: 'Капитальный ремонт', img: engineImg },
+      { title: 'Устранение течи моторного масла', img: engine2Img },
+    ],
     service: [
-      'Замена свечей зажиганий',
-      'Замена высоковольтных проводов',
-      'Замена моторного масла и фильтра',
-      'Замена воздушного фильтра',
+      { title: 'Замена свечей зажиганий', img: candle },
+      { title: 'Замена высоковольтных проводов', img: wire },
+      { title: 'Замена моторного масла и фильтра', img: oil },
+      { title: 'Замена воздушного фильтра', img: airFilter },
     ],
   },
   transmission: {
     name: CATEGORIES.transmission,
     title: 'КОРОБКА',
     img: TransmissionImg,
-    repair: ['Ремонт КПП', 'Устранение течи трансмисионного масла'],
-    service: ['Замена трансмисионного масла'],
+    repair: [
+      { title: 'Ремонт КПП', img: '' },
+      { title: 'Устранение течи трансмисионного масла', img: '' },
+    ],
+    service: [{ title: 'Замена трансмисионного масла', img: '' }],
   },
   suspension: {
     name: CATEGORIES.suspension,
     title: 'ПОДВЕСКА',
     img: SuspensionImg,
     repair: [
-      'Ремонт рулевой рейки',
-      'Замена мортизаторов',
-      'Замена рулевых наконечников',
-      'Замена стоек стабилизатора',
-      'Замена стоек стабилизатора',
-      'Замена стоек стабилизатора',
-      'Замена стоек стабилизатора',
+      { title: 'Ремонт рулевой рейки', img: '' },
+      { title: 'Замена мортизаторов', img: '' },
+      { title: 'Замена рулевых наконечников', img: '' },
+      { title: 'Замена стоек стабилизатора', img: '' },
+      { title: 'Замена стоек стабилизатора', img: '' },
+      { title: 'Замена стоек стабилизатора', img: '' },
+      { title: 'Замена стоек стабилизатора', img: '' },
     ],
-    service: ['Диагностика подвески', 'Диагностика рулевого управления'],
+    service: [
+      { title: 'Диагностика подвески', img: '' },
+      { title: 'Диагностика рулевого управления', img: '' },
+    ],
   },
   electric: {
     name: CATEGORIES.electric,
     title: 'ЭЛЕКТРИКА',
     img: ElctricImg,
-    repair: ['Замена элементов освещения', 'Ремонт стартера'],
-    service: ['Диагностика электрооборудования'],
+    repair: [
+      { title: 'Замена элементов освещения', img: '' },
+      { title: 'Ремонт стартера', img: '' },
+    ],
+    service: [{ title: 'Диагностика электрооборудования', img: '' }],
   },
   brakes: {
     name: CATEGORIES.brakes,
     title: 'ТОРМОЗА',
     img: BrakesImg,
-    repair: ['Замена дисков (барабанов)', 'Замена тормозных колодок'],
-    service: ['Замена тормозной жидкости', 'Обслуживание тормозных механизмов'],
+    repair: [
+      { title: 'Замена дисков (барабанов)', img: '' },
+      { title: 'Замена тормозных колодок', img: '' },
+    ],
+    service: [
+      { title: 'Замена тормозной жидкости', img: '' },
+      { title: 'Обслуживание тормозных механизмов', img: '' },
+    ],
   },
   tires: {
     name: CATEGORIES.tires,
     title: 'ШИНКА',
     img: TiresImg,
-    repair: ['Устранение проколов, порезов'],
+    repair: [{ title: 'Устранение проколов, порезов', img: '' }],
     service: [
-      'Замена покрышки колеса',
-      'Замена колеса в сборе',
-      'Балансировка',
+      { title: 'Замена покрышки колеса', img: '' },
+      { title: 'Замена колеса в сборе', img: '' },
+      { title: 'Балансировка', img: '' },
     ],
   },
   optional: {
@@ -96,14 +126,17 @@ const CATEGORIESMAP: CategoriesMap = {
     title: 'ДОПЫ',
     img: OptionalImg,
     repair: [
-      'Ремонт системы кондиционирования',
-      'Ремонт мультимидийной системы',
+      { title: 'Ремонт системы кондиционирования', img: '' },
+      { title: 'Ремонт мультимидийной системы', img: '' },
     ],
     service: [
-      'Замена фреона',
-      'Установка парктроника',
-      'Установка видеорегистратора со скрытой проводкой',
-      'Открытие дополнительных вкладок меню бортового компьютера',
+      { title: 'Замена фреона', img: '' },
+      { title: 'Установка парктроника', img: '' },
+      { title: 'Установка видеорегистратора со скрытой проводкой', img: '' },
+      {
+        title: 'Открытие дополнительных вкладок меню бортового компьютера',
+        img: '',
+      },
     ],
   },
   none: {

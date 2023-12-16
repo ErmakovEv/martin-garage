@@ -5,10 +5,10 @@
   --text-color: #666;
   --text-headline: #000;
   --card-shadow: #c5dea1;
-  /* --card-height: ; */
-  --card-width: 10vmax;
+  --card-height: 150px;
+  --card-width: 120px;
   --card-radius: 12px;
-  --header-height: 5vh;
+  --header-height: 40px;
   --blend-mode: overlay;
   --transition: 0.15s;
   user-select: none;
@@ -95,6 +95,8 @@
 .card__body-cover {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 90%;
 }
 
 .card__body-cover:after {
@@ -114,7 +116,7 @@
 .card__body-cover-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
   border-radius: var(--card-radius);
   filter: var(--filter-bg, grayscale(1));
   clip-path: polygon(
@@ -171,7 +173,7 @@
   color: var(--text-headline);
   font-family: 'Oswald';
   font-weight: 700;
-  font-size: 1vh;
+  font-size: 12px;
   margin-bottom: 1px;
 }
 
@@ -179,5 +181,5 @@
   color: var(--text-color);
   font-family: 'Oswald';
   font-weight: 500;
-  font-size: 0.7vh;
+  font-size: 10px;
 }

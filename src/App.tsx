@@ -11,7 +11,7 @@ import SpinnerMask from './components/SpinnerMask/SpinnerMask';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import FormPage from './components/Pages/FormPage';
 import AboutPage from './components/Pages/AboutPage';
-const LazyMain = lazy(() => import('./components/Main/Main'));
+const LazyMainPage = lazy(() => import('./components/Pages/MainPage'));
 
 const theme = createTheme({
   palette: {
@@ -28,7 +28,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />} errorElement={<ErrorPage />}>
-        <Route path="/" element={<LazyMain />} />
+        <Route path="/" element={<LazyMainPage />} />
         <Route path="/about" element={<AboutPage />} />
         {/* <Route
           path="/dashboard"

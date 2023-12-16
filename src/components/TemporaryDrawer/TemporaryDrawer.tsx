@@ -23,7 +23,9 @@ export default function TemporaryDrawer({
         sx: {
           m: 0,
           p: 0,
-          minHeight: '26vh',
+          width: '100%',
+          minHeight: '250px',
+
           overflowY: 'hidden',
           overlowX: 'auto',
           backgroundColor: '#333',

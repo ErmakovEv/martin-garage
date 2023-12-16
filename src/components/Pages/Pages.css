@@ -48,11 +48,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(212, 36, 165, 0.8);
+  background-color: #b2b2b2;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(29, 17, 138, 0.6);
+  background-color: #c5dea1;
 }
 
 .button-container {

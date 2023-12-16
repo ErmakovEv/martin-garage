@@ -4,13 +4,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MainLogo from '../MainLogo/MainLogo';
 import ToggleButton from '../ToggleButton/ToggleButton';
-import { useAppDispatch } from '../../hooks/reduxHooks';
-import { toggleDrawer } from '../../redux/slices/swipeableEdgeDrawerSlice';
 import '../MainLogo/MainLogo.css';
 import './Header.css';
 
 const Header = () => {
-  const dispatch = useAppDispatch();
   return (
     <div
       className="header"
@@ -53,7 +50,6 @@ const Header = () => {
             className="change-button"
             size="small"
             variant="text"
-            onClick={() => dispatch(toggleDrawer())}
             sx={{
               textDecoration: 'double',
               color: '#b2b2b2',

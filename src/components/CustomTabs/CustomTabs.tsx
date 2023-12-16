@@ -34,8 +34,9 @@ function CustomTabPanel(props: TabPanelProps) {
           sx={{
             p: 1,
             display: 'flex',
-            alignItems: 'start',
+            alignItems: 'center',
             width: '100%',
+            height: '100%',
           }}
           className={'drawer-section'}
         >
@@ -67,7 +68,7 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
   };
 
   return (
-    <Box component={'div'} sx={{ width: '100%' }}>
+    <Box component={'div'} sx={{ width: '100%', height: '200px' }}>
       <Box
         component={'div'}
         sx={{
@@ -97,10 +98,10 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
         {CATEGORIESMAP[bottonActive].repair?.map((item, index) => (
           <Box component="div" style={{ margin: 4 }} key={index}>
             <CustomCheckbox
-              key={item}
+              key={item.title}
               value={item}
-              onChange={() => dispatch(changeList(item))}
-              checked={workList.indexOf(item) !== -1}
+              onChange={() => dispatch(changeList(item.title))}
+              checked={workList.indexOf(item.title) !== -1}
             />
           </Box>
         ))}
@@ -109,10 +110,10 @@ function CustomTabs({ bottonActive }: CustomTabsProps) {
         {CATEGORIESMAP[bottonActive].service?.map((item, index) => (
           <Box component="div" style={{ margin: 4 }} key={index}>
             <CustomCheckbox
-              key={item}
+              key={item.title}
               value={item}
-              onChange={() => dispatch(changeList(item))}
-              checked={workList.indexOf(item) !== -1}
+              onChange={() => dispatch(changeList(item.title))}
+              checked={workList.indexOf(item.title) !== -1}
             />
           </Box>
         ))}
