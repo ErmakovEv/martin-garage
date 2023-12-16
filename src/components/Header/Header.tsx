@@ -64,7 +64,7 @@ const Header = () => {
             }}
           >
             <NavLink className="navlink" to="/about">
-              О нас
+              О сервисе
             </NavLink>
           </Button>
         </Box>

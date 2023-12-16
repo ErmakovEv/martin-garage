@@ -8,36 +8,36 @@ import CustomButton from '../CustomButton/CustomButton';
 
 const MainPage = () => (
   <section>
-    <Suspense>
-      <div className="main-page">
-        <Canvas>
-          <Stage environment="city" intensity={0.1}>
-            <Car />
-          </Stage>
-          <OrbitControls
-            enableZoom={false}
-            enablePan={true}
-            enableRotate={true}
-            zoomSpeed={0.6}
-            panSpeed={0.6}
-            rotateSpeed={0.6}
-            target={[0, 0, 0]}
-          />
-        </Canvas>
-        <Box
-          component="div"
-          sx={{
-            height: `150px`,
-            zIndex: 100,
-            position: 'fixed',
-            top: '80%',
-            right: 0,
-          }}
-        >
-          <CustomButton />
-        </Box>
-      </div>
-    </Suspense>
+    {/* <Suspense> */}
+    <div className="main-page">
+      <Canvas>
+        <Stage environment="city" intensity={0.1}>
+          <Car />
+        </Stage>
+        <OrbitControls
+          enableZoom={false}
+          enablePan={true}
+          enableRotate={true}
+          zoomSpeed={0.6}
+          panSpeed={0.6}
+          rotateSpeed={0.6}
+          target={[0, 0, 0]}
+        />
+      </Canvas>
+      <Box
+        component="div"
+        sx={{
+          height: `150px`,
+          zIndex: 100,
+          position: 'fixed',
+          top: '80%',
+          right: 0,
+        }}
+      >
+        <CustomButton />
+      </Box>
+    </div>
+    {/* </Suspense> */}
   </section>
 );
 
