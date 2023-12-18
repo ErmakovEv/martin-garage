@@ -1,4 +1,4 @@
-// import logo1 from '/logo-black.png';
+import logo1 from '/logo-black.png';
 
 const SpinnerMask = () => {
   return (
@@ -15,9 +15,9 @@ const SpinnerMask = () => {
         background: 'radial-gradient(#0e300e, #000000)',
       }}
     >
-      {/* <svg width="200" height="200" viewBox="0 0 200 200">
+      <svg width="200" height="200" viewBox="0 0 200 200">
         <image href={logo1} width="200" height="200" mask="url(#mask)" />
-      </svg> */}
+      </svg>
     </div>
   );
 };
