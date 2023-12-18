@@ -1,4 +1,4 @@
-import logo1 from '/logo-black.png';
+import logo1 from '/logo.png';
 
 const SpinnerMask = () => {
   return (
