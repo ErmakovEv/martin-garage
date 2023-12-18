@@ -1,7 +1,6 @@
 // import AppBar from '@mui/material/AppBar';
 import { NavLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import { Badge } from '@mui/material';
 import Button from '@mui/material/Button';
 import MainLogo from '../MainLogo/MainLogo';
 import ToggleButton from '../ToggleButton/ToggleButton';
