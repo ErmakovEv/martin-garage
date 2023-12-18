@@ -1,12 +1,12 @@
-import React, { useRef } from 'react';
-import { Box, TextField, Stack, Button } from '@mui/material';
+import React, { useRef, useState } from 'react';
+import { Box, TextField, Stack, Button, Snackbar, Alert } from '@mui/material';
 import { useAppSelector } from '../../hooks/reduxHooks';
 import CustomAutocomplite from '../CustomAutocomplite/CustomAutocomplite';
 import emailjs from '@emailjs/browser';
 
 const FormPage = () => {
   const worksList = useAppSelector((state) => state.worksSlice.worksList);
-
+  const [openSnack, setOpenSnack] = useState(false);
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent) => {
@@ -31,11 +31,20 @@ const FormPage = () => {
         (result) => {
           console.log(result.text);
           console.log('message send!!!');
+          setOpenSnack(true);
         },
         (error) => {
           console.log(error.text);
         }
       );
+  };
+
+  const handleClose = (_?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenSnack(false);
   };
 
   return (
@@ -65,17 +74,6 @@ const FormPage = () => {
             borderRadius: '5px',
           }}
         >
-          <Box
-            component="div"
-            sx={{
-              color: '#29b249',
-              fontSize: '15px',
-              textAlign: 'center',
-              fontFamily: ['Oswald'],
-            }}
-          >
-            ЗАПИСЬ НА СЕРВИС
-          </Box>
           <Box component="div" sx={{ color: 'white' }}>
             <Box
               component="div"
@@ -208,6 +206,11 @@ const FormPage = () => {
           </Box>
         </Stack>
       </form>
+      <Snackbar open={openSnack} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Ваша заявка принята! Мы скоро с Вами свяжимся
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
