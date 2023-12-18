@@ -30,10 +30,7 @@ const CustomAutocomplite = () => {
             )
           );
 
-          setValue([
-            ...value,
-            ...newValue.filter((option) => value.indexOf(option) === -1),
-          ]);
+          setValue(newValue);
         }}
         options={worksList.map((item) => ({ title: item }))}
         getOptionLabel={(option) => option.title}
@@ -45,7 +42,6 @@ const CustomAutocomplite = () => {
                 sx={{ fontSize: '10px' }}
                 size="small"
                 {...getTagProps({ index })}
-                // disabled={fixedOptions.indexOf(option) !== -1}
                 key={index}
               />
             </Typography>

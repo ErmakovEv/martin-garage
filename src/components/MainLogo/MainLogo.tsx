@@ -16,7 +16,7 @@ function MainLogo() {
         sx={{
           textAlign: 'center',
           color: 'white',
-          fontSize: '1.3vh',
+          fontSize: '14px',
           mt: 0,
           pt: 0,
           lineHeight: 1,

@@ -5,7 +5,6 @@ export const swipeableEdgeDrawerSlice = createSlice({
   initialState: { isOpen: false },
   reducers: {
     toggleDrawer: (state) => {
-      console.log('!!!');
       state.isOpen = !state.isOpen;
     },
   },

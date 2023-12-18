@@ -17,7 +17,6 @@ export const worksSlice = createSlice({
         state.worksList = state.worksList.filter(
           (item) => item !== action.payload
         );
-        console.log('!@#');
       } else {
         state.worksList.push(action.payload);
       }
