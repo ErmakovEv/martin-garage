@@ -1,6 +1,8 @@
-import logo1 from '/logo.png';
+type SpinnerMaskProps = {
+  img?: string;
+};
 
-const SpinnerMask = () => {
+const SpinnerMask = ({ img }: SpinnerMaskProps) => {
   return (
     <div
       style={{
@@ -16,7 +18,9 @@ const SpinnerMask = () => {
       }}
     >
       <svg width="200" height="200" viewBox="0 0 200 200">
-        <image href={logo1} width="200" height="200" mask="url(#mask)" />
+        {img ? (
+          <image href={img} width="200" height="200" mask="url(#mask)" />
+        ) : null}
       </svg>
     </div>
   );
